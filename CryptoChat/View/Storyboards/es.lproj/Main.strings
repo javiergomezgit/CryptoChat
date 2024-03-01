@@ -1,0 +1,165 @@
+
+/* Class = "UIViewController"; title = "PhoneViewController"; ObjectID = "0SY-gY-PBZ"; */
+"0SY-gY-PBZ.title" = "PhoneViewController";
+
+/* Class = "UIViewController"; title = "UsernameViewController"; ObjectID = "18g-ss-HgE"; */
+"18g-ss-HgE.title" = "UsernameViewController";
+
+/* Class = "UILabel"; text = "Create a passcode to accept friend request"; ObjectID = "1h5-jj-gHc"; */
+"1h5-jj-gHc.text" = "Crea un codigo para aceptar el contacto";
+
+/* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "3yK-pV-eOU"; */
+"3yK-pV-eOU.normalTitle" = "Saltar";
+
+/* Class = "UINavigationItem"; title = "Chats"; ObjectID = "4jA-ED-6Hi"; */
+"4jA-ED-6Hi.title" = "Chats";
+
+/* Class = "UILabel"; text = "Change Profile Photo"; ObjectID = "5bb-kx-keU"; */
+"5bb-kx-keU.text" = "Cambiar Foto de Perfil";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "5yD-d9-1EZ"; */
+"5yD-d9-1EZ.title" = "Perfil";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "6tb-jH-FLn"; */
+"6tb-jH-FLn.placeholder" = "Contraseña";
+
+/* Class = "UITabBarController"; title = "CryptoChat"; ObjectID = "Ah9-dQ-lW2"; */
+"Ah9-dQ-lW2.title" = "Lock & Key";
+
+/* Class = "UIViewController"; title = "StarterViewController"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "StarterViewController";
+
+/* Class = "UIViewController"; title = "LoginViewController"; ObjectID = "DrT-3U-Q0t"; */
+"DrT-3U-Q0t.title" = "LoginViewController";
+
+/* Class = "UITextField"; placeholder = "username or email"; ObjectID = "DxY-sE-iAH"; */
+"DxY-sE-iAH.placeholder" = "username or email";
+
+/* Class = "UIViewController"; title = "ProfileViewController"; ObjectID = "Ehn-QH-AAM"; */
+"Ehn-QH-AAM.title" = "ProfileViewController";
+
+/* Class = "UILabel"; text = "Reject"; ObjectID = "GaM-o1-xmZ"; */
+"GaM-o1-xmZ.text" = "Rechazar";
+
+/* Class = "UIViewController"; title = "PasscodeViewController"; ObjectID = "ICr-6q-lyX"; */
+"ICr-6q-lyX.title" = "PasscodeViewController";
+
+/* Class = "UILabel"; text = "Lock & Key"; ObjectID = "Ilu-JV-IIm"; */
+"Ilu-JV-IIm.text" = "Lock & Key";
+
+/* Class = "UILabel"; text = "Your Phone"; ObjectID = "IpV-9Y-Hb2"; */
+"IpV-9Y-Hb2.text" = "Tu telefono";
+
+/* Class = "UIViewController"; title = "ChatsViewController"; ObjectID = "LS0-81-xET"; */
+"LS0-81-xET.title" = "ChatsViewController";
+
+/* Class = "UILabel"; text = "Passcode"; ObjectID = "Osc-uw-gb2"; */
+"Osc-uw-gb2.text" = "Codigo";
+
+/* Class = "UIButton"; normalTitle = "Register with email"; ObjectID = "QPv-HC-5JM"; */
+"QPv-HC-5JM.normalTitle" = "Register with email";
+
+/* Class = "UILabel"; text = "Enter Password"; ObjectID = "RdC-RI-xZV"; */
+"RdC-RI-xZV.text" = "Escribe Contraseña";
+
+/* Class = "UITextField"; placeholder = "Verify pass"; ObjectID = "Sny-b8-lcr"; */
+"Sny-b8-lcr.placeholder" = "Verificar codigo";
+
+/* Class = "UIViewController"; title = "BlockedViewController"; ObjectID = "UcO-Fu-pwX"; */
+"UcO-Fu-pwX.title" = "BlockedViewController";
+
+/* Class = "UITextField"; placeholder = "username"; ObjectID = "Ucu-Px-zO2"; */
+"Ucu-Px-zO2.placeholder" = "usuario";
+
+/* Class = "UILabel"; text = "maybe text masd asd asd asd asd asd asd asdaybe not HImaybe text masd asd asd asd asd asd asd asdaybe not HImaybe text masd asd asd asd asd asd asd asdaybe not HImaybe text masd asd asd asd asd asd asd asdaybe not HI"; ObjectID = "UeO-lK-MHC"; */
+"UeO-lK-MHC.text" = "maybe text masd asd asd asd asd asd asd asdaybe not HImaybe text masd asd asd asd asd asd asd asdaybe not HImaybe text masd asd asd asd asd asd asd asdaybe not HImaybe text masd asd asd asd asd asd asd asdaybe not HI";
+
+/* Class = "UILabel"; text = "Cancel Request"; ObjectID = "V41-oF-n5k"; */
+"V41-oF-n5k.text" = "Cancelar Solicitud";
+
+/* Class = "UITextField"; placeholder = "email"; ObjectID = "VJO-ip-YFQ"; */
+"VJO-ip-YFQ.placeholder" = "email";
+
+/* Class = "UIViewController"; title = "ChatViewController"; ObjectID = "W2B-2R-VOj"; */
+"W2B-2R-VOj.title" = "ChatViewController";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "XXq-kw-MVQ"; */
+"XXq-kw-MVQ.normalTitle" = "Registrar";
+
+/* Class = "UILabel"; text = "Block"; ObjectID = "YDf-IZ-cNW"; */
+"YDf-IZ-cNW.text" = "Bloquear";
+
+/* Class = "UITabBarItem"; title = "My Friends"; ObjectID = "auT-Dx-dxm"; */
+"auT-Dx-dxm.title" = "Mis Contactos";
+
+/* Class = "UITextField"; placeholder = "123 456 7890"; ObjectID = "bhi-xd-Unz"; */
+"bhi-xd-Unz.placeholder" = "123 456 7890";
+
+/* Class = "UILabel"; text = "65000454"; ObjectID = "bkn-dk-zXD"; */
+"bkn-dk-zXD.text" = "65000454";
+
+/* Class = "UIViewController"; title = "FriendProfileViewController"; ObjectID = "cbE-4p-Nrh"; */
+"cbE-4p-Nrh.title" = "FriendProfileViewController";
+
+/* Class = "UILabel"; text = "Accept"; ObjectID = "cnk-1R-vQ5"; */
+"cnk-1R-vQ5.text" = "Aceptar";
+
+/* Class = "UITextField"; placeholder = "1234"; ObjectID = "hEN-BD-Xnd"; */
+"hEN-BD-Xnd.placeholder" = "1234";
+
+/* Class = "UILabel"; text = "Please add a photo for your account."; ObjectID = "hKJ-ro-hdC"; */
+"hKJ-ro-hdC.text" = "Porfavor agrega una foto para tu cuenta";
+
+/* Class = "UIButton"; normalTitle = "Login with email"; ObjectID = "iYu-W2-M6M"; */
+"iYu-W2-M6M.normalTitle" = "Login with email";
+
+/* Class = "UIButton"; normalTitle = "Forgot my password"; ObjectID = "ibD-Ha-v8m"; */
+"ibD-Ha-v8m.normalTitle" = "Forgot my password";
+
+/* Class = "UIViewController"; title = "RegisterViewController"; ObjectID = "juT-MN-37p"; */
+"juT-MN-37p.title" = "RegisterViewController";
+
+/* Class = "UITabBarItem"; title = "Chats"; ObjectID = "k78-5f-j6K"; */
+"k78-5f-j6K.title" = "Chats";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "kyz-CG-NZb"; */
+"kyz-CG-NZb.normalTitle" = "Login";
+
+/* Class = "UILabel"; text = "No one here!"; ObjectID = "lIJ-Ts-ehl"; */
+"lIJ-Ts-ehl.text" = "Nadie aqui!";
+
+/* Class = "UILabel"; text = "maybeusernam"; ObjectID = "lMz-Mi-Hyp"; */
+"lMz-Mi-Hyp.text" = "maybeusernam";
+
+/* Class = "UINavigationItem"; title = "My Friends"; ObjectID = "m79-A4-859"; */
+"m79-A4-859.title" = "Mis Contactos";
+
+/* Class = "UILabel"; text = "Confirm your country code and enter your phone number"; ObjectID = "n1O-oR-inn"; */
+"n1O-oR-inn.text" = "Comfirma el codigo de tu pais y escribe tu numero de telefono";
+
+/* Class = "UITextField"; placeholder = "username"; ObjectID = "pIe-0c-TAJ"; */
+"pIe-0c-TAJ.placeholder" = "usuario";
+
+/* Class = "UINavigationItem"; title = "Updates"; ObjectID = "qIV-Sn-uaX"; */
+"qIV-Sn-uaX.title" = "Updates";
+
+/* Class = "UIButton"; normalTitle = "Select Country"; ObjectID = "qi1-za-vfc"; */
+"qi1-za-vfc.normalTitle" = "Selecciona Pais";
+
+/* Class = "UITextField"; placeholder = "+1"; ObjectID = "rUW-iQ-EUG"; */
+"rUW-iQ-EUG.placeholder" = "+1";
+
+/* Class = "UINavigationItem"; title = "Profile"; ObjectID = "s4b-ak-cNA"; */
+"s4b-ak-cNA.title" = "Perfil";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "sLz-u8-blB"; */
+"sLz-u8-blB.placeholder" = "Contraseña";
+
+/* Class = "UILabel"; text = "Clear Chat"; ObjectID = "tkr-Jv-83o"; */
+"tkr-Jv-83o.text" = "Borrar Chat";
+
+/* Class = "UILabel"; text = "Your Photo"; ObjectID = "vNv-dX-Qhx"; */
+"vNv-dX-Qhx.text" = "Tu foto";
+
+/* Class = "UIViewController"; title = "SettingsViewController"; ObjectID = "vTD-ox-npp"; */
+"vTD-ox-npp.title" = "SettingsViewController";

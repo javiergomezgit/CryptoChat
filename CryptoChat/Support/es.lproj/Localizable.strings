@@ -1,0 +1,133 @@
+/* 
+  Localizable.strings
+  CryptoChat
+
+  Created by Javier Gomez on 9/16/21.
+*/
+
+"Let me know" = "Notificame";
+"Allow Notifications" = "Aceptar notificaciones";
+"Do you want us to let you know when your friends reply back?" = "Te gustaria saber cuando tu contacto aprobó la solicitud";
+
+"Current Passcode" = "Código actual";
+"Delete" = "Borrar";
+"New Passcode" = "Nuevo código";
+"Confirm Passcode" = "Confirmar Código";
+"Set Passcode" = "Crea tu codigo";
+
+//Friends
+"Pull to refresh" = "Desliza para Actualizar ";
+"Search Contacts" = "Buscar en Contacts";
+"Your contact accepted the request" = "Tu contacto aceptó la invitación";
+"Clear Chat" = "Borrar chat";
+"Clear" = "Borrar";
+"Are you sure you want to erase chat" = "Estas seguro de borrar el chat?";
+"Block Contact" = "Bloquear contacto";
+"Are you sure you want to block contact" = "Estas seguro de querer bloquear el contacto?";
+"Block" = "Bloquear";
+"Passcode has to be 4 numbers" = "Código tiene que ser 4 números";
+
+
+//Chats
+"Search for users" = "Buscar usuarios";
+"No results" = "No resultados";
+"Cancel" = "Cancelar";
+"The chat has been erased" = "El chat se ha borrado";
+"Search Chats" = "Buscar en chats";
+"Attach Photo" = "Agregar Foto";
+"Add a photo or video" = "Agrega una foto o video";
+"Gallery" = "Galería";
+"Camera" = "Cámara";
+"Not matching face, possible security bridge" = "Posible fallo en seguridad";
+"Settings" = "Ajustes";
+"New Friend Request" = "Nueva solicitud";
+"You have a new request from" = "Tienes una nueva solicitud";
+"Request" = "Solicitud";
+"We sent a request for chatting" = "Enviamos una solicitud para conversar";
+"Password for a new conversation" = "Código para nueva conversación";
+"Please provide a 4 numbers passcode" = "Provee un código nuevo de 4 numeros";
+"Save" = "Guardar";
+"Send" = "Enviar";
+"Color Theme" = "Estilo de color";
+"Others" = "Otros";
+
+
+ 
+
+//Account
+//Username
+"Error, try again" = "Error, intenta de nuevo";
+"Username" = "Usuario";
+"You can change it later" = "Lo puedes cambiar despues";
+"Username already exists" = "Usuario ya existe";
+"Profile Photo" = "Foto Perfil";
+"Attach a photo for your profile" = "Agrega una foto para tu perfil";
+
+//Profile
+"Account" = "Cuenta";
+"Change Username" = "Cambiar usuario";
+"Phone Number" = "Número de Teléfono";
+"General Passcode" = "Código General";
+"Privacy" = "Privacidad";
+"Allow Notifications" = "Permitir notificaciones";
+"Logout" = "Cerrar Sesión";
+"Blocked Users" = "Usuarios Bloqueados";
+"Delete Account" = "Eliminar cuenta";
+"Are you sure you want to log out?" = "Estas seguro de cerrar sesión";
+"Loging Out" = "Cerrar Sesión";
+"Are you sure you want to delete your account?" = "Estas seguro de querer elminar tu cuenta";
+"Delete" = "Eliminar";
+"Change Settings" = "Cambiar Ajustes";
+"To change your notifications you have to go to settings" = "Para cambiar notificaciones, tienes que ir a tus ajustes";
+"Take me" = "Llevame";
+"Blocked Users" = "Usuarios Bloqueados";
+"Security & Privacy" = "Seguridad y Privacidad";
+"Private" = "Privado";
+"Auto Lock" = "Auto Bloquear";
+"Contact us" = "Contactanos";
+
+//Blocked
+"Unblock" = "Desbloquear";
+"Are you sure you want to unblock this user?" = "Estas seguro de desbloquar este usuario";
+
+//Settings
+"Update" = "Actualizar";
+"Success" = "Exito";
+"Username Successfully Updated" = "Nombre de usuario actualizado correctamente";
+"Phone number has to be 10 digits" = "Número de teléfono tiene que ser 10 digitos";
+"Already exists" = "Ya existe";
+"Code for New phone number" = "Código para un nuevo número";
+"Please provide the code on your text messages" = "Porfavor provee el código en tus mensajes de texto";
+"Phone Number Successfully Updated" = "Número de teléfono actualizado correctamente";
+"Email Successfully Updated" = "Correo actualizado correctamente";
+"Emails don't match" = "Correos no coinciden";
+"Password Successfully Updated" = "Contraseña actualizada correctamente";
+"New" = "Nuevo";
+"Current" = "Actual";
+"Buy me a coffee" = "Comprame un café";
+"Privacy Policy" = "Privacidad";
+
+
+
+//Alerts
+"Wrong information" = "Información erronea";
+"Username not found, try again" = "Usuario no encontrado, intenta de nuevo";
+"Username or email can not be empty" = "Usuario o correo no pueden estar vacios";
+"Phone number should be at least 10 digits" = "Número de teléfono debe de ser 10 digitos";
+"Phone Number" = "Número de teléfono";
+"Phone number" = "Número de teléfono";
+"Country code shouldn't be empty" = "Codigo de pais no puede estar vacio";
+"User created successfully" = "Usuario creado exitosamente";
+"Passwords are not matching" = "Contraseñas no coinciden";
+"Password" = "Contraseña";
+"Passwords have to be more than 6 characters" = "Contraseña tiene que ser mas de 6 caracteres";
+"Wrong format, fields can not be empty" = "Formato erroneo, no debe de haber campos vacios";
+"Format of country code or phone number are wrong" = "Formato erroneo en tu codigo de país o número de teléfono";
+"Wrong code, make sure to verify in your text messages (SMS)" = "Codigo erroneo, asegurate de verificar tus mensajes de texto (SMS)";
+
+"Look for new contacts" = "Busca nuevos contactos";
+"Send messages to your contacts" = "Envia mensajes a tus contactos";
+"Your messages will be here" = "Tus mensajes estarán aquí";
+"Your contacts will be here" = "Tus contactos estarán aquí";
+"Unlock to reveal the messages" = "Desbloquea para revelar los mensajes";
+"Check your text message for code verification" = "Busca en tus mensajes de text (SMS) un código para iniciar sesión";
