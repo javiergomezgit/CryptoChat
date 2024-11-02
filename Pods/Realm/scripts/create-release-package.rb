@@ -20,7 +20,7 @@ def sh(*args)
 end
 
 def platforms(xcode_version)
-  if xcode_version.start_with? '15.2'
+  if xcode_version.to_f >= 15.2
     %w{osx ios watchos tvos catalyst visionos}
   else
     %w{osx ios watchos tvos catalyst}
@@ -28,12 +28,14 @@ def platforms(xcode_version)
 end
 
 def create_xcframework(root, xcode_version, configuration, name)
+  signing_identity = ENV['SIGNING_IDENTITY']
   prefix = "#{root}/#{xcode_version}"
   output = "#{prefix}/#{configuration}/#{name}.xcframework"
   files = Dir.glob "#{prefix}/#{configuration}/*/#{name}.xcframework/*/#{name}.framework"
 
   sh 'xcodebuild', '-create-xcframework', '-allow-internal-distribution',
      '-output', output, *files.flat_map {|f| ['-framework', f]}
+  sh 'codesign', '--timestamp', '-s', signing_identity, output
 end
 
 def zip(name, *files)

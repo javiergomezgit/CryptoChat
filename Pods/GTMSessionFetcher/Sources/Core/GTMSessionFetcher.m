@@ -97,38 +97,24 @@ NS_ASSUME_NONNULL_END
 #define GTM_TARGET_SUPPORTS_APP_TRANSPORT_SECURITY 1
 #endif
 
-#if ((defined(TARGET_OS_MACCATALYST) && TARGET_OS_MACCATALYST) ||                                 \
-     (TARGET_OS_OSX && defined(__MAC_10_15) && __MAC_OS_X_VERSION_MIN_REQUIRED >= __MAC_10_15) || \
-     (TARGET_OS_IOS && defined(__IPHONE_13_0) &&                                                  \
-      __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_13_0) ||                                       \
-     (TARGET_OS_WATCH && defined(__WATCHOS_6_0) &&                                                \
-      __WATCH_OS_VERSION_MIN_REQUIRED >= __WATCHOS_6_0) ||                                        \
-     (TARGET_OS_TV && defined(__TVOS_13_0) && __TVOS_VERSION_MIN_REQUIRED >= __TVOS_13_0))
-#define GTM_SDK_REQUIRES_TLSMINIMUMSUPPORTEDPROTOCOLVERSION 1
-#define GTM_SDK_SUPPORTS_TLSMINIMUMSUPPORTEDPROTOCOLVERSION 1
-#elif ((TARGET_OS_OSX && defined(__MAC_10_15) && __MAC_OS_X_VERSION_MAX_ALLOWED >= __MAC_10_15) || \
-       (TARGET_OS_IOS && defined(__IPHONE_13_0) &&                                                 \
-        __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0) ||                                       \
-       (TARGET_OS_WATCH && defined(__WATCHOS_6_0) &&                                               \
-        __WATCH_OS_VERSION_MAX_ALLOWED >= __WATCHOS_6_0) ||                                        \
-       (TARGET_OS_TV && defined(__TVOS_13_0) && __TVOS_VERSION_MAX_ALLOWED >= __TVOS_13_0))
-#define GTM_SDK_REQUIRES_TLSMINIMUMSUPPORTEDPROTOCOLVERSION 0
-#define GTM_SDK_SUPPORTS_TLSMINIMUMSUPPORTEDPROTOCOLVERSION 1
-#else
-#define GTM_SDK_REQUIRES_TLSMINIMUMSUPPORTEDPROTOCOLVERSION 0
-#define GTM_SDK_SUPPORTS_TLSMINIMUMSUPPORTEDPROTOCOLVERSION 0
+#if TARGET_OS_IOS
+# if defined(__IPHONE_13_0) && __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_13_0
+#  define GTM_SDK_REQUIRES_TLSMINIMUMSUPPORTEDPROTOCOLVERSION 1
+# else
+#  define GTM_SDK_REQUIRES_TLSMINIMUMSUPPORTEDPROTOCOLVERSION 0
+# endif
+#else  // Not iOS
+# define GTM_SDK_REQUIRES_TLSMINIMUMSUPPORTEDPROTOCOLVERSION 1
 #endif
 
-#if ((defined(TARGET_OS_MACCATALYST) && TARGET_OS_MACCATALYST) ||                                 \
-     (TARGET_OS_OSX && defined(__MAC_10_15) && __MAC_OS_X_VERSION_MIN_REQUIRED >= __MAC_10_15) || \
-     (TARGET_OS_IOS && defined(__IPHONE_13_0) &&                                                  \
-      __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_13_0) ||                                       \
-     (TARGET_OS_WATCH && defined(__WATCHOS_6_0) &&                                                \
-      __WATCH_OS_VERSION_MIN_REQUIRED >= __WATCHOS_6_0) ||                                        \
-     (TARGET_OS_TV && defined(__TVOS_13_0) && __TVOS_VERSION_MIN_REQUIRED >= __TVOS_13_0))
-#define GTM_SDK_REQUIRES_SECTRUSTEVALUATEWITHERROR 1
-#else
-#define GTM_SDK_REQUIRES_SECTRUSTEVALUATEWITHERROR 0
+#if TARGET_OS_IOS
+# if defined(__IPHONE_13_0) && __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_13_0
+#  define GTM_SDK_REQUIRES_SECTRUSTEVALUATEWITHERROR 1
+# else
+#  define GTM_SDK_REQUIRES_SECTRUSTEVALUATEWITHERROR 0
+# endif
+#else  // Not iOS
+# define GTM_SDK_REQUIRES_SECTRUSTEVALUATEWITHERROR 1
 #endif
 
 #if __has_attribute(swift_async)
@@ -982,14 +968,12 @@ static GTMSessionFetcherTestBlock _Nullable gGlobalTestBlock;
 #if !GTM_ALLOW_INSECURE_REQUESTS
 #if GTM_SDK_REQUIRES_TLSMINIMUMSUPPORTEDPROTOCOLVERSION
     _configuration.TLSMinimumSupportedProtocolVersion = tls_protocol_version_TLSv12;
-#elif GTM_SDK_SUPPORTS_TLSMINIMUMSUPPORTEDPROTOCOLVERSION
-    if (@available(iOS 13, tvOS 13, macOS 10.15, *)) {
+#else
+    if (@available(iOS 13, *)) {
       _configuration.TLSMinimumSupportedProtocolVersion = tls_protocol_version_TLSv12;
     } else {
       _configuration.TLSMinimumSupportedProtocol = kTLSProtocol12;
     }
-#else
-    _configuration.TLSMinimumSupportedProtocol = kTLSProtocol12;
 #endif  // GTM_SDK_REQUIRES_TLSMINIMUMSUPPORTEDPROTOCOLVERSION
 #endif
   }  // !_configuration
@@ -2546,6 +2530,14 @@ static _Nullable id<GTMUIApplicationProtocol> gSubstituteUIApp;
 
   NSString *originalScheme = originalRequestURL.scheme;
   NSString *redirectScheme = redirectRequestURL.scheme;
+
+  // If no change in scheme with redirect, just return the redirect.
+  if (originalScheme != nil &&
+      redirectScheme != nil &&
+      [originalScheme caseInsensitiveCompare:redirectScheme] == NSOrderedSame) {
+    return redirectRequestURL;
+  }
+
   BOOL insecureToSecureRedirect =
       (originalScheme != nil && [originalScheme caseInsensitiveCompare:@"http"] == NSOrderedSame &&
        redirectScheme != nil && [redirectScheme caseInsensitiveCompare:@"https"] == NSOrderedSame);

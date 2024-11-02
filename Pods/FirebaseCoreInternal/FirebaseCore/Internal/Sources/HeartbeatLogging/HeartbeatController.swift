@@ -16,19 +16,28 @@ import Foundation
 
 /// An object that provides API to log and flush heartbeats from a synchronized storage container.
 public final class HeartbeatController {
+  /// Used for standardizing dates for calendar-day comparison.
+  private enum DateStandardizer {
+    private static let calendar: Calendar = {
+      var calendar = Calendar(identifier: .iso8601)
+      calendar.locale = Locale(identifier: "en_US_POSIX")
+      calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+      return calendar
+    }()
+
+    static func standardize(_ date: Date) -> (Date) {
+      return calendar.startOfDay(for: date)
+    }
+  }
+
   /// The thread-safe storage object to log and flush heartbeats from.
   private let storage: HeartbeatStorageProtocol
   /// The max capacity of heartbeats to store in storage.
   private let heartbeatsStorageCapacity: Int = 30
   /// Current date provider. It is used for testability.
   private let dateProvider: () -> Date
-  /// Used for standardizing dates for calendar-day comparision.
-  static let dateStandardizer: (Date) -> (Date) = {
-    var calendar = Calendar(identifier: .iso8601)
-    calendar.locale = Locale(identifier: "en_US_POSIX")
-    calendar.timeZone = TimeZone(secondsFromGMT: 0)!
-    return calendar.startOfDay(for:)
-  }()
+  /// Used for standardizing dates for calendar-day comparison.
+  private static let dateStandardizer = DateStandardizer.self
 
   /// Public initializer.
   /// - Parameter id: The `id` to associate this controller's heartbeat storage with.
@@ -54,7 +63,7 @@ public final class HeartbeatController {
   init(storage: HeartbeatStorageProtocol,
        dateProvider: @escaping () -> Date = Date.init) {
     self.storage = storage
-    self.dateProvider = { Self.dateStandardizer(dateProvider()) }
+    self.dateProvider = { Self.dateStandardizer.standardize(dateProvider()) }
   }
 
   /// Asynchronously logs a new heartbeat, if needed.
@@ -114,6 +123,34 @@ public final class HeartbeatController {
     } catch {
       // If the operation throws, assume no heartbeat(s) were retrieved or set.
       return HeartbeatsPayload.emptyPayload
+    }
+  }
+
+  public func flushAsync(completionHandler: @escaping (HeartbeatsPayload) -> Void) {
+    let resetTransform = { (heartbeatsBundle: HeartbeatsBundle?) -> HeartbeatsBundle? in
+      guard let oldHeartbeatsBundle = heartbeatsBundle else {
+        return nil // Storage was empty.
+      }
+      // The new value that's stored will use the old's cache to prevent the
+      // logging of duplicates after flushing.
+      return HeartbeatsBundle(
+        capacity: self.heartbeatsStorageCapacity,
+        cache: oldHeartbeatsBundle.lastAddedHeartbeatDates
+      )
+    }
+
+    // Asynchronously gets and returns the stored heartbeats, resetting storage
+    // using the given transform.
+    storage.getAndSetAsync(using: resetTransform) { result in
+      switch result {
+      case let .success(heartbeatsBundle):
+        // If no heartbeats bundle was stored, return an empty payload.
+        completionHandler(heartbeatsBundle?.makeHeartbeatsPayload() ?? HeartbeatsPayload
+          .emptyPayload)
+      case .failure:
+        // If the operation throws, assume no heartbeat(s) were retrieved or set.
+        completionHandler(HeartbeatsPayload.emptyPayload)
+      }
     }
   }
 

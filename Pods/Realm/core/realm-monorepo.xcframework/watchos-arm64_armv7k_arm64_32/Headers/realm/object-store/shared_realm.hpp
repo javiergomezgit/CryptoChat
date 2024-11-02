@@ -44,9 +44,7 @@ class StringData;
 class Table;
 class ThreadSafeReference;
 class Transaction;
-class SyncSession;
 struct AuditConfig;
-struct SyncConfig;
 typedef std::shared_ptr<Realm> SharedRealm;
 typedef std::weak_ptr<Realm> WeakRealm;
 
@@ -138,6 +136,8 @@ struct RealmConfig {
         return schema_mode == SchemaMode::ReadOnly;
     }
 
+    bool needs_file_format_upgrade() const;
+
     // If false, always return a new Realm instance, and don't return
     // that Realm instance for other requests for a cached Realm. Useful
     // for dynamic Realms and for tests that need multiple instances on
@@ -152,13 +152,6 @@ struct RealmConfig {
     // The Scheduler which this Realm should be bound to. If not supplied,
     // a default one for the current thread will be used.
     std::shared_ptr<util::Scheduler> scheduler;
-
-    /// A data structure storing data used to configure the Realm for sync support.
-    std::shared_ptr<SyncConfig> sync_config;
-
-    // Open the Realm using the sync history mode even if a sync
-    // configuration is not supplied.
-    bool force_sync_history = false;
 
     // A factory function which produces an audit implementation.
     std::shared_ptr<AuditConfig> audit_config;
@@ -182,6 +175,13 @@ struct RealmConfig {
     // everything can be done deterministically on one thread, and
     // speeds up tests that don't need notifications.
     bool automatic_change_notifications = true;
+
+    // For internal use and should not be exposed by SDKs.
+    //
+    // If the file is invalid or can't be decrypted with the given encryption
+    // key, clear it and reinitialize it as a new file. This is used for the
+    // sync metadata realm which is automatically deleted if it can't be used.
+    bool clear_on_invalid_file = false;
 };
 
 class Realm : public std::enable_shared_from_this<Realm> {
@@ -196,23 +196,6 @@ public:
     // Get a Realm for the given scheduler (or current thread if `none`)
     // from the thread safe reference.
     static SharedRealm get_shared_realm(ThreadSafeReference, std::shared_ptr<util::Scheduler> = nullptr);
-
-#if REALM_ENABLE_SYNC
-    // Open a synchronized Realm and make sure it is fully up to date before
-    // returning it.
-    //
-    // It is possible to both cancel the download and listen to download progress
-    // using the `AsyncOpenTask` returned. Note that the download doesn't actually
-    // start until you call `AsyncOpenTask::start(callback)`
-    static std::shared_ptr<AsyncOpenTask> get_synchronized_realm(Config config);
-
-    std::shared_ptr<SyncSession> sync_session() const;
-
-    // Returns the latest/active subscription set for a FLX-sync enabled realm.
-    // Throws an exception for a non-FLX realm
-    sync::SubscriptionSet get_latest_subscription_set();
-    sync::SubscriptionSet get_active_subscription_set();
-#endif
 
     // Returns a frozen Realm for the given Realm. This Realm can be accessed from any thread.
     static SharedRealm get_frozen_realm(Config config, VersionID version);

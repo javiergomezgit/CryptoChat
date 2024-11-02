@@ -6,12 +6,7 @@
 # (C) Copyright 2011-2022 by realm.io.
 ##################################################################################
 
-# Warning: pipefail is not a POSIX compatible option, but on macOS it works just fine.
-#          macOS uses a POSIX complain version of bash as /bin/sh, but apparently it does
-#          not strip away this feature. Also, this will fail if somebody forces the script
-#          to be run with zsh.
-set -o pipefail
-set -e
+set -eo pipefail
 
 readonly source_root="$(dirname "$0")"
 
@@ -68,8 +63,7 @@ command:
   test-catalyst-swift:  tests RealmSwift Mac Catalyst framework
   test-swiftpm:         tests ObjC and Swift macOS frameworks via SwiftPM
   test-ios-swiftui:        tests SwiftUI framework UI tests
-  test-swiftuiserver-osx:  tests Server Sync in SwiftUI
-  verify:               verifies docs, cocoapods, swiftpm, xcframework, swiftuiserver-osx, swiftlint, spm-ios, objectserver-osx, watchos in both Debug and Release configurations
+  verify:               verifies docs, cocoapods, swiftpm, xcframework, swiftlint, spm-ios, watchos in both Debug and Release configurations
 
   docs:                 builds docs in docs/output
   examples:             builds all examples
@@ -80,7 +74,6 @@ command:
   examples-tvos-swift:  builds all Swift tvOS examples
 
   get-version:          get the current version
-  get-ioplatformuuid:   get io platform uuid
   set-version version:  set the version
   set-core-version version: set the version of core to use
 
@@ -95,7 +88,6 @@ command:
 
   publish-github:       create a Github release for the currently checked-out tag
   publish-docs:         publish a built docs release to the website
-  publish-update-checker: publish cocoa file with a version to check for update logic
   publish-cocoapods [tag]: publish the requested tag to CocoaPods
   prepare-publish-changelog: creates a changelog file to be used in Slack
 
@@ -134,7 +126,7 @@ xcode() {
 xc() {
     # Logs xcodebuild output in realtime
     : "${NSUnbufferedIO:=YES}"
-    xcode "$@" "${REALM_EXTRA_BUILD_ARGUMENTS[@]}"
+    xcode "$@" ${REALM_EXTRA_BUILD_ARGUMENTS[@]}
 }
 
 xctest() {
@@ -286,10 +278,10 @@ create_xcframework() {
     local platform="$3"
 
     local out_path="$ROOT_WORKSPACE/$config/$platform/$product.xcframework"
-    # find "$ROOT_WORKSPACE" -maxdepth 5
     find "$ROOT_WORKSPACE" -path "*/$config*/$product.framework" \
         | sed 's/.*/-framework &/' \
         | xargs xcodebuild -create-xcframework -allow-internal-distribution -output "$out_path"
+    codesign --timestamp -s "$SIGNING_IDENTITY" "$out_path"
 }
 
 # Artifacts are zipped by the artifacts store so they're endup nested zipped, so we need to unzip this zip.
@@ -372,7 +364,6 @@ build_docs() {
         objc=""
     fi
 
-    echo ">>> RUN JAZZY"
     jazzy \
       "${objc}" \
       --clean \
@@ -443,11 +434,6 @@ case "$COMMAND" in
     ######################################
     "download-core")
         sh scripts/download-core.sh
-        exit 0
-        ;;
-
-    "setup-baas")
-        ruby Realm/ObjectServerTests/setup_baas.rb
         exit 0
         ;;
 
@@ -555,7 +541,6 @@ case "$COMMAND" in
             -exec sed -i '' 's/RealmSwift.AsyncOpenTask/RealmSwift.Realm.AsyncOpenTask/g' {} \; \
             -exec sed -i '' 's/RealmSwift.UpdatePolicy/RealmSwift.Realm.UpdatePolicy/g' {} \; \
             -exec sed -i '' 's/RealmSwift.Notification[[:>:]]/RealmSwift.Realm.Notification/g' {} \; \
-            -exec sed -i '' 's/RealmSwift.OpenBehavior/RealmSwift.Realm.OpenBehavior/g' {} \; \
             -exec sed -i '' 's/τ_1_0/V/g' {} \; # Generics will use τ_1_0 which needs to be changed to the correct type name.
 
         exit 0
@@ -649,11 +634,6 @@ case "$COMMAND" in
         exit 0
         ;;
 
-    "test-objectserver-osx")
-        xctest 'Object Server Tests' -configuration "$CONFIGURATION" -sdk macosx -destination "platform=macOS,arch=$(uname -m)"
-        exit 0
-        ;;
-
     test-swiftpm*)
         SANITIZER=$(echo "$COMMAND" | cut -d - -f 3)
         # FIXME: throwing an exception from a property getter corrupts Swift's
@@ -684,11 +664,6 @@ case "$COMMAND" in
         exit 0
         ;;
 
-    "test-swiftuiserver-osx")
-        xctest 'SwiftUISyncTestHost' -configuration "$CONFIGURATION" -sdk macosx -destination 'platform=macOS'
-        exit 0
-        ;;
-
     ######################################
     # Full verification
     ######################################
@@ -696,12 +671,10 @@ case "$COMMAND" in
         sh build.sh verify-cocoapods
         sh build.sh verify-docs
         sh build.sh verify-spm-ios
-        sh build.sh verify-objectserver-osx
         sh build.sh verify-swiftlint
         sh build.sh verify-swiftpm
         sh build.sh verify-watchos
         sh buils.sh verify-xcframework
-        sh build.sh verify-swiftuiserver-osx
 
         sh build.sh verify-osx
         sh build.sh verify-osx-debug
@@ -799,11 +772,6 @@ case "$COMMAND" in
         cd examples/installation
 
         REALM_TEST_BRANCH="$sha" ./build.rb "$PLATFORM" spm "$LINKAGE"
-        exit 0
-        ;;
-
-    "verify-objectserver-osx")
-        REALM_TEST_BRANCH="$sha" sh build.sh test-objectserver-osx
         exit 0
         ;;
 
@@ -934,7 +902,7 @@ case "$COMMAND" in
     "examples-ios")
         workspace="examples/ios/objc/RealmExamples.xcworkspace"
 
-        examples="Simple TableView Migration Backlink GroupedTableView Encryption Draw"
+        examples="Simple TableView Migration Backlink GroupedTableView Encryption"
         versions="0 1 2 3 4 5"
         for example in $examples; do
             if [ "$example" = "Migration" ]; then
@@ -1017,11 +985,6 @@ case "$COMMAND" in
         exit 0
         ;;
 
-    "get-ioplatformuuid")
-        ioreg -d2 -c IOPlatformExpertDevice | awk -F\" '/IOPlatformUUID/{print $(NF-1)}'
-        exit 0
-        ;;
-
     "set-version")
         realm_version="$2"
         version_files="Realm/Realm-Info.plist"
@@ -1048,7 +1011,7 @@ case "$COMMAND" in
         new_version="$2"
         old_version="$(sed -n 's/^REALM_CORE_VERSION=\(.*\)$/\1/p' "${source_root}/dependencies.list")"
 
-        sed -i '' "s/^REALM_CORE_VERSION=.*/REALM_CORE_VERSION=$new_version/" dependencies.list
+        sed -i '' "s/^REALM_CORE_VERSION=.*/REALM_CORE_VERSION=v$new_version/" dependencies.list
         sed -i '' "s/^let coreVersion =.*/let coreVersion = Version(\"$new_version\")/" Package.swift
         sed -i '' "s/Upgraded realm-core from ? to ?/Upgraded realm-core from $old_version to $new_version/" CHANGELOG.md
 
@@ -1083,16 +1046,9 @@ case "$COMMAND" in
 
     release-create-xcframework-*)
         platform="$2"
-        xcode_version=$(echo "$COMMAND" | cut -d- -f4 )
+        xcode_version=$(echo "$COMMAND" | cut -d- -f4)
 
-        # Artifacts are nested zips so need to be extracted twice
         find . -name 'build-*.zip' -exec unzip {} \;
-        find . -name 'xcode-cloud-build-*.zip' -exec unzip {} \;
-
-        # Spaces with xargs are complicated so get rid of them
-        for dir in "RealmSwift Build "*; do
-            mv "$dir" build-$(echo "$dir" | cut -d' ' -f3)
-        done
 
         create_xcframework Realm Release "$platform"
         create_xcframework RealmSwift Release "$platform"
@@ -1132,6 +1088,27 @@ case "$COMMAND" in
         sh build.sh examples-tvos-swift
         cd ..
         rm -rf "${filename}"
+
+        exit 0
+        ;;
+
+    "install-apple-certificates")
+        # create variables
+        CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
+        KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+
+        # import certificate and provisioning profile from secrets
+        echo "$DEVELOPMENT_CERTIFICATE_BASE64" | base64 --decode -o $CERTIFICATE_PATH
+
+        # create temporary keychain
+        security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+        security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
+        security unlock-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+
+        # import certificate to keychain
+        security import $CERTIFICATE_PATH -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
+        security set-key-partition-list -S apple-tool:,apple: -k "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+        security list-keychain -d user -s $KEYCHAIN_PATH
 
         exit 0
         ;;
@@ -1295,24 +1272,11 @@ case "$COMMAND" in
           exit 0
         fi
 
-        s3cmd put --recursive --acl-public --access_key=${AWS_ACCESS_KEY_ID} --secret_key=${AWS_SECRET_ACCESS_KEY} docs/swift_output/ s3://realm-sdks/docs/realm-sdks/swift/${VERSION}/
-        s3cmd put --recursive --acl-public --access_key=${AWS_ACCESS_KEY_ID} --secret_key=${AWS_SECRET_ACCESS_KEY} docs/swift_output/ s3://realm-sdks/docs/realm-sdks/swift/latest/
+        s3cmd put --no-mime-magic --guess-mime-type --recursive --acl-public docs/swift_output/ s3://realm-sdks/docs/realm-sdks/swift/${VERSION}/
+        s3cmd put --no-mime-magic --guess-mime-type --recursive --acl-public docs/swift_output/ s3://realm-sdks/docs/realm-sdks/swift/latest/
 
-        s3cmd put --recursive --acl-public --access_key=${AWS_ACCESS_KEY_ID} --secret_key=${AWS_SECRET_ACCESS_KEY} docs/objc_output/ s3://realm-sdks/docs/realm-sdks/objc/${VERSION}/
-        s3cmd put --recursive --acl-public --access_key=${AWS_ACCESS_KEY_ID} --secret_key=${AWS_SECRET_ACCESS_KEY} docs/objc_output/ s3://realm-sdks/docs/realm-sdks/objc/latest/
-        ;;
-
-    "publish-update-checker")
-        VERSION="$(sed -n 's/^VERSION=\(.*\)$/\1/p' "${source_root}/dependencies.list")"
-        PRERELEASE_REGEX='alpha|beta|rc|preview'
-        if [[ $VERSION =~ $PRERELEASE_REGEX ]]; then
-          exit 0
-        fi
-
-        # update static.realm.io/update/cocoa
-        printf "%s" "${VERSION}" > cocoa
-        s3cmd put --recursive --acl-public --access_key=${AWS_ACCESS_KEY_ID} --secret_key=${AWS_SECRET_ACCESS_KEY} cocoa s3://static.realm.io/update/
-        exit 0
+        s3cmd put --no-mime-magic --guess-mime-type --recursive --acl-public docs/objc_output/ s3://realm-sdks/docs/realm-sdks/objc/${VERSION}/
+        s3cmd put --no-mime-magic --guess-mime-type --recursive --acl-public docs/objc_output/ s3://realm-sdks/docs/realm-sdks/objc/latest/
         ;;
 
     "publish-cocoapods")
@@ -1342,11 +1306,10 @@ x.y.z Release notes (yyyy-MM-dd)
 <!-- ### Breaking Changes - ONLY INCLUDE FOR NEW MAJOR version -->
 
 ### Compatibility
-* Realm Studio: 14.0.1 or later.
-* APIs are backwards compatible with all previous releases in the 10.x.y series.
-* Carthage release for Swift is built with Xcode 15.2.0.
+* Realm Studio: 15.0.0 or later.
+* Carthage release for Swift is built with Xcode 15.4.0.
 * CocoaPods: 1.10 or later.
-* Xcode: 14.2-15.2.0.
+* Xcode: 15.3.0-16.1 beta.
 
 ### Internal
 * Upgraded realm-core from ? to ?
