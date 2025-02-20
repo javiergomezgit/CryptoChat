@@ -1,0 +1,1369 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		220F34462D2D86D800CDD41C /* FriendProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220F34422D2D86D800CDD41C /* FriendProfileViewController.swift */; };
+		220F34472D2D86D800CDD41C /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220F34432D2D86D800CDD41C /* FriendsViewController.swift */; };
+		220F34482D2D86D800CDD41C /* InviteFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220F34442D2D86D800CDD41C /* InviteFriendsViewController.swift */; };
+		220F344A2D2D86EA00CDD41C /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220F34492D2D86E200CDD41C /* PhotoViewController.swift */; };
+		227443D02D53FEEF00220BA5 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 227443CF2D53FEEF00220BA5 /* MessageKit */; };
+		227443D32D53FEFF00220BA5 /* FanMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 227443D22D53FEFF00220BA5 /* FanMenu */; };
+		227443D62D53FF1500220BA5 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 227443D52D53FF1500220BA5 /* Nuke */; };
+		227443D82D53FF1500220BA5 /* NukeExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 227443D72D53FF1500220BA5 /* NukeExtensions */; };
+		227443DB2D53FF5900220BA5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 227443DA2D53FF5900220BA5 /* FirebaseAnalytics */; };
+		227443DD2D53FF5900220BA5 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 227443DC2D53FF5900220BA5 /* FirebaseAppCheck */; };
+		227443DF2D53FF5900220BA5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 227443DE2D53FF5900220BA5 /* FirebaseAuth */; };
+		227443E12D53FF5900220BA5 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 227443E02D53FF5900220BA5 /* FirebaseCore */; };
+		227443E32D53FF5900220BA5 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 227443E22D53FF5900220BA5 /* FirebaseCrashlytics */; };
+		227443E52D53FF5900220BA5 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 227443E42D53FF5900220BA5 /* FirebaseDatabase */; };
+		227443E72D53FF5900220BA5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 227443E62D53FF5900220BA5 /* FirebaseFirestore */; };
+		227443E92D53FF5900220BA5 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 227443E82D53FF5900220BA5 /* FirebaseMessaging */; };
+		227443EB2D53FF5900220BA5 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 227443EA2D53FF5900220BA5 /* FirebaseStorage */; };
+		227444082D54027900220BA5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 227444072D54027900220BA5 /* FirebaseAuth */; };
+		2274440A2D54027900220BA5 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 227444092D54027900220BA5 /* FirebaseCore */; };
+		2274440C2D54027900220BA5 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 2274440B2D54027900220BA5 /* FirebaseDatabase */; };
+		2274440E2D54027900220BA5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2274440D2D54027900220BA5 /* FirebaseFirestore */; };
+		227444102D54027900220BA5 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 2274440F2D54027900220BA5 /* FirebaseInAppMessaging-Beta */; };
+		227444122D54027900220BA5 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 227444112D54027900220BA5 /* FirebaseMessaging */; };
+		227444142D54027900220BA5 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 227444132D54027900220BA5 /* FirebaseStorage */; };
+		227444182D5403A000220BA5 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 227444172D5403A000220BA5 /* JGProgressHUD */; };
+		2274441D2D5403E000220BA5 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 2274441C2D5403E000220BA5 /* YPImagePicker */; };
+		2274441F2D54048E00220BA5 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2274441E2D54048E00220BA5 /* Lottie */; };
+		22A96BD02D54281D00D2D510 /* SwiftJWT in Frameworks */ = {isa = PBXBuildFile; productRef = 22A96BCF2D54281D00D2D510 /* SwiftJWT */; };
+		22A96BD22D5428FC00D2D510 /* lnk-chats-edc6767c8fec.json in Resources */ = {isa = PBXBuildFile; fileRef = 22A96BD12D5428FC00D2D510 /* lnk-chats-edc6767c8fec.json */; };
+		22E7D89A2D233C9600E0EA7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E7D8952D233C9600E0EA7C /* Main.storyboard */; };
+		22E7D89B2D233C9600E0EA7C /* ChatViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E7D8882D233C9600E0EA7C /* ChatViewCell.xib */; };
+		22E7D89C2D233C9600E0EA7C /* animation-lock.json in Resources */ = {isa = PBXBuildFile; fileRef = 22E7D8782D233C9600E0EA7C /* animation-lock.json */; };
+		22E7D89E2D233C9600E0EA7C /* Chats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E7D8862D233C9600E0EA7C /* Chats.storyboard */; };
+		22E7D89F2D233C9600E0EA7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22E7D87A2D233C9600E0EA7C /* Assets.xcassets */; };
+		22E7D8A02D233C9600E0EA7C /* BlockedViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E7D88C2D233C9600E0EA7C /* BlockedViewCell.xib */; };
+		22E7D8A12D233C9600E0EA7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E7D8932D233C9600E0EA7C /* LaunchScreen.storyboard */; };
+		22E7D8A22D233C9600E0EA7C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22E7D87E2D233C9600E0EA7C /* GoogleService-Info.plist */; };
+		22E7D8A32D233C9600E0EA7C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E7D88E2D233C9600E0EA7C /* Profile.storyboard */; };
+		22E7D8A42D233C9600E0EA7C /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D8712D233C9600E0EA7C /* PushNotificationManager.swift */; };
+		22E7D8A52D233C9600E0EA7C /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D8632D233C9600E0EA7C /* PasscodeViewController.swift */; };
+		22E7D8A62D233C9600E0EA7C /* PushNotificationSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D8722D233C9600E0EA7C /* PushNotificationSender.swift */; };
+		22E7D8A72D233C9600E0EA7C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D8652D233C9600E0EA7C /* SettingsViewController.swift */; };
+		22E7D8A82D233C9600E0EA7C /* AutoLockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D8612D233C9600E0EA7C /* AutoLockController.swift */; };
+		22E7D8A92D233C9600E0EA7C /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D8682D233C9600E0EA7C /* PhoneViewController.swift */; };
+		22E7D8AA2D233C9600E0EA7C /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D8692D233C9600E0EA7C /* SigninViewController.swift */; };
+		22E7D8AB2D233C9600E0EA7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D8792D233C9600E0EA7C /* AppDelegate.swift */; };
+		22E7D8AC2D233C9600E0EA7C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D85B2D233C9600E0EA7C /* ChatViewController.swift */; };
+		22E7D8AD2D233C9600E0EA7C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D8642D233C9600E0EA7C /* ProfileViewController.swift */; };
+		22E7D8AE2D233C9600E0EA7C /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D8672D233C9600E0EA7C /* EmailViewController.swift */; };
+		22E7D8AF2D233C9600E0EA7C /* ChatViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D8872D233C9600E0EA7C /* ChatViewCell.swift */; };
+		22E7D8B02D233C9600E0EA7C /* SettingsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D8902D233C9600E0EA7C /* SettingsViewCell.swift */; };
+		22E7D8B12D233C9600E0EA7C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D8802D233C9600E0EA7C /* Reachability.swift */; };
+		22E7D8B22D233C9600E0EA7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D8812D233C9600E0EA7C /* SceneDelegate.swift */; };
+		22E7D8B32D233C9600E0EA7C /* StarterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D86D2D233C9600E0EA7C /* StarterViewController.swift */; };
+		22E7D8B42D233C9600E0EA7C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D86C2D233C9600E0EA7C /* OnboardingViewController.swift */; };
+		22E7D8B52D233C9600E0EA7C /* ProfileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D88F2D233C9600E0EA7C /* ProfileViewCell.swift */; };
+		22E7D8B62D233C9600E0EA7C /* SwiftyOnboardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D8762D233C9600E0EA7C /* SwiftyOnboardPage.swift */; };
+		22E7D8B72D233C9600E0EA7C /* BlockedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D88B2D233C9600E0EA7C /* BlockedViewCell.swift */; };
+		22E7D8B82D233C9600E0EA7C /* StorageDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D85E2D233C9600E0EA7C /* StorageDatabaseController.swift */; };
+		22E7D8B92D233C9600E0EA7C /* ChatFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D8592D233C9600E0EA7C /* ChatFriendViewController.swift */; };
+		22E7D8BA2D233C9600E0EA7C /* SwiftyOnboardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D8752D233C9600E0EA7C /* SwiftyOnboardOverlay.swift */; };
+		22E7D8BB2D233C9600E0EA7C /* NewChatViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D8892D233C9600E0EA7C /* NewChatViewCell.swift */; };
+		22E7D8BC2D233C9600E0EA7C /* ChatFriendViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D8842D233C9600E0EA7C /* ChatFriendViewCell.swift */; };
+		22E7D8BD2D233C9600E0EA7C /* BlockedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D8622D233C9600E0EA7C /* BlockedViewController.swift */; };
+		22E7D8BE2D233C9600E0EA7C /* SearchFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D85C2D233C9600E0EA7C /* SearchFriendViewController.swift */; };
+		22E7D8BF2D233C9600E0EA7C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D86F2D233C9600E0EA7C /* Models.swift */; };
+		22E7D8C02D233C9600E0EA7C /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D87B2D233C9600E0EA7C /* Countries.swift */; };
+		22E7D8C12D233C9600E0EA7C /* UserDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D85F2D233C9600E0EA7C /* UserDatabaseController.swift */; };
+		22E7D8C22D233C9600E0EA7C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D87D2D233C9600E0EA7C /* Extensions.swift */; };
+		22E7D8C32D233C9600E0EA7C /* SwiftyOnboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D8742D233C9600E0EA7C /* SwiftyOnboard.swift */; };
+		22E7D8C42D233C9600E0EA7C /* CryptoChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D87C2D233C9600E0EA7C /* CryptoChat.xcdatamodeld */; };
+		22E7D8C52D233C9600E0EA7C /* UsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D86A2D233C9600E0EA7C /* UsernameViewController.swift */; };
+		22E7D8C62D233C9600E0EA7C /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7D85A2D233C9600E0EA7C /* ChatsViewController.swift */; };
+		22F253EB2D2DEC7E0050B727 /* FaceDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F253E92D2DEC7E0050B727 /* FaceDetectionViewController.swift */; };
+		22F253ED2D2DEC8A0050B727 /* Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F253EC2D2DEC850050B727 /* Encryption.swift */; };
+		62769E4E81420D9573A3F30F /* Pods_CryptoChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DED2EA6D659B18CBC1A2F72 /* Pods_CryptoChat.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22DA2D492D53F1F40020832D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22DA2D3D2D53F1F40020832D /* SmileLock.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F373752220FF72080000A50A;
+			remoteInfo = SmileLock;
+		};
+		22DA2D822D53F3BD0020832D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22DA2D692D53F3A80020832D /* SmileLock.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F373752220FF72080000A50A;
+			remoteInfo = SmileLock;
+		};
+		22DA2DC72D53F7D40020832D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22DA2DAE2D53F7B10020832D /* SmileLock.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F373752220FF72080000A50A;
+			remoteInfo = SmileLock;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2203AAAE2D5698EA0067257F /* CryptoChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		220954EC2D2318AC00CFD5AB /* CryptoChat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CryptoChat.xcodeproj; sourceTree = "<group>"; };
+		220955B12D231ACB00CFD5AB /* CryptoChat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CryptoChat.xcodeproj; sourceTree = "<group>"; };
+		220F34422D2D86D800CDD41C /* FriendProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileViewController.swift; sourceTree = "<group>"; };
+		220F34432D2D86D800CDD41C /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		220F34442D2D86D800CDD41C /* InviteFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteFriendsViewController.swift; sourceTree = "<group>"; };
+		220F34492D2D86E200CDD41C /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		222EED782D207C3B00A1573A /* CryptoChat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CryptoChat.xcodeproj; sourceTree = "<group>"; };
+		224D36E72D207C5800639976 /* CryptoChat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CryptoChat.xcodeproj; sourceTree = "<group>"; };
+		225ECEBD2D2324BD005F6582 /* CryptoChat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CryptoChat.xcodeproj; sourceTree = "<group>"; };
+		22612FC82D1F6A3E00E5AF17 /* CryptoChat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CryptoChat.xcodeproj; sourceTree = "<group>"; };
+		2261305D2D1F6A8200E5AF17 /* CryptoChat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CryptoChat.xcodeproj; sourceTree = "<group>"; };
+		226B6B5A2D231697002BA5C1 /* CryptoChat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CryptoChat.xcodeproj; sourceTree = "<group>"; };
+		2275E99A2D23396E003854FD /* CryptoChat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CryptoChat.xcodeproj; sourceTree = "<group>"; };
+		2277CDD32D2075B600F9587B /* CryptoChat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CryptoChat.xcodeproj; sourceTree = "<group>"; };
+		228E204C2D231CD000185F7B /* CryptoChat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CryptoChat.xcodeproj; sourceTree = "<group>"; };
+		2292F72C2D2321B700D44A77 /* CryptoChat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CryptoChat.xcodeproj; sourceTree = "<group>"; };
+		22A219B72D207C700002F908 /* CryptoChat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CryptoChat.xcodeproj; sourceTree = "<group>"; };
+		22A96BD12D5428FC00D2D510 /* lnk-chats-edc6767c8fec.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "lnk-chats-edc6767c8fec.json"; sourceTree = "<group>"; };
+		22AA45712D232DA100E42A79 /* CryptoChat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CryptoChat.xcodeproj; sourceTree = "<group>"; };
+		22DA2D3D2D53F1F40020832D /* SmileLock.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SmileLock.xcodeproj; sourceTree = "<group>"; };
+		22DA2D4C2D53F33E0020832D /* JGProgressHUD */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = JGProgressHUD; sourceTree = "<group>"; };
+		22DA2D692D53F3A80020832D /* SmileLock.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SmileLock.xcodeproj; sourceTree = "<group>"; };
+		22DA2DAE2D53F7B10020832D /* SmileLock.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SmileLock.xcodeproj; sourceTree = "<group>"; };
+		22DBEE242D23182400C5075C /* CryptoChat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CryptoChat.xcodeproj; sourceTree = "<group>"; };
+		22DD779E2D207A8C00AB1AAF /* CryptoChat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CryptoChat.xcodeproj; sourceTree = "<group>"; };
+		22E7D8592D233C9600E0EA7C /* ChatFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFriendViewController.swift; sourceTree = "<group>"; };
+		22E7D85A2D233C9600E0EA7C /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
+		22E7D85B2D233C9600E0EA7C /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		22E7D85C2D233C9600E0EA7C /* SearchFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFriendViewController.swift; sourceTree = "<group>"; };
+		22E7D85E2D233C9600E0EA7C /* StorageDatabaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageDatabaseController.swift; sourceTree = "<group>"; };
+		22E7D85F2D233C9600E0EA7C /* UserDatabaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabaseController.swift; sourceTree = "<group>"; };
+		22E7D8612D233C9600E0EA7C /* AutoLockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLockController.swift; sourceTree = "<group>"; };
+		22E7D8622D233C9600E0EA7C /* BlockedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedViewController.swift; sourceTree = "<group>"; };
+		22E7D8632D233C9600E0EA7C /* PasscodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeViewController.swift; sourceTree = "<group>"; };
+		22E7D8642D233C9600E0EA7C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		22E7D8652D233C9600E0EA7C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		22E7D8672D233C9600E0EA7C /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
+		22E7D8682D233C9600E0EA7C /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
+		22E7D8692D233C9600E0EA7C /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
+		22E7D86A2D233C9600E0EA7C /* UsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameViewController.swift; sourceTree = "<group>"; };
+		22E7D86C2D233C9600E0EA7C /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		22E7D86D2D233C9600E0EA7C /* StarterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterViewController.swift; sourceTree = "<group>"; };
+		22E7D86F2D233C9600E0EA7C /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		22E7D8712D233C9600E0EA7C /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
+		22E7D8722D233C9600E0EA7C /* PushNotificationSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationSender.swift; sourceTree = "<group>"; };
+		22E7D8742D233C9600E0EA7C /* SwiftyOnboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyOnboard.swift; sourceTree = "<group>"; };
+		22E7D8752D233C9600E0EA7C /* SwiftyOnboardOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyOnboardOverlay.swift; sourceTree = "<group>"; };
+		22E7D8762D233C9600E0EA7C /* SwiftyOnboardPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyOnboardPage.swift; sourceTree = "<group>"; };
+		22E7D8782D233C9600E0EA7C /* animation-lock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "animation-lock.json"; sourceTree = "<group>"; };
+		22E7D8792D233C9600E0EA7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		22E7D87A2D233C9600E0EA7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		22E7D87B2D233C9600E0EA7C /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		22E7D87D2D233C9600E0EA7C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		22E7D87E2D233C9600E0EA7C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		22E7D87F2D233C9600E0EA7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22E7D8802D233C9600E0EA7C /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		22E7D8812D233C9600E0EA7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		22E7D8842D233C9600E0EA7C /* ChatFriendViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFriendViewCell.swift; sourceTree = "<group>"; };
+		22E7D8852D233C9600E0EA7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chats.storyboard; sourceTree = "<group>"; };
+		22E7D8872D233C9600E0EA7C /* ChatViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewCell.swift; sourceTree = "<group>"; };
+		22E7D8882D233C9600E0EA7C /* ChatViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewCell.xib; sourceTree = "<group>"; };
+		22E7D8892D233C9600E0EA7C /* NewChatViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChatViewCell.swift; sourceTree = "<group>"; };
+		22E7D88B2D233C9600E0EA7C /* BlockedViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedViewCell.swift; sourceTree = "<group>"; };
+		22E7D88C2D233C9600E0EA7C /* BlockedViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlockedViewCell.xib; sourceTree = "<group>"; };
+		22E7D88D2D233C9600E0EA7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
+		22E7D88F2D233C9600E0EA7C /* ProfileViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewCell.swift; sourceTree = "<group>"; };
+		22E7D8902D233C9600E0EA7C /* SettingsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewCell.swift; sourceTree = "<group>"; };
+		22E7D8922D233C9600E0EA7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		22E7D8942D233C9600E0EA7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		22E7D8972D233C9600E0EA7C /* CryptoChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CryptoChat.entitlements; sourceTree = "<group>"; };
+		22E7D8992D233C9600E0EA7C /* CryptoChat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CryptoChat.xcdatamodel; sourceTree = "<group>"; };
+		22F253E92D2DEC7E0050B727 /* FaceDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetectionViewController.swift; sourceTree = "<group>"; };
+		22F253EC2D2DEC850050B727 /* Encryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encryption.swift; sourceTree = "<group>"; };
+		3EAED42A2CC634A85C035AF7 /* Pods-CryptoChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoChat.debug.xcconfig"; path = "Target Support Files/Pods-CryptoChat/Pods-CryptoChat.debug.xcconfig"; sourceTree = "<group>"; };
+		6DED2EA6D659B18CBC1A2F72 /* Pods_CryptoChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7296DF0FD16979C046D1818 /* Pods-CryptoChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoChat.release.xcconfig"; path = "Target Support Files/Pods-CryptoChat/Pods-CryptoChat.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		220F34352D2D75F200CDD41C /* Friends */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Friends;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22FDE1432CE10B7800D57299 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				227444122D54027900220BA5 /* FirebaseMessaging in Frameworks */,
+				227443E52D53FF5900220BA5 /* FirebaseDatabase in Frameworks */,
+				227443D32D53FEFF00220BA5 /* FanMenu in Frameworks */,
+				227444142D54027900220BA5 /* FirebaseStorage in Frameworks */,
+				227443E32D53FF5900220BA5 /* FirebaseCrashlytics in Frameworks */,
+				227443E72D53FF5900220BA5 /* FirebaseFirestore in Frameworks */,
+				22A96BD02D54281D00D2D510 /* SwiftJWT in Frameworks */,
+				2274440A2D54027900220BA5 /* FirebaseCore in Frameworks */,
+				2274441F2D54048E00220BA5 /* Lottie in Frameworks */,
+				227443D02D53FEEF00220BA5 /* MessageKit in Frameworks */,
+				2274441D2D5403E000220BA5 /* YPImagePicker in Frameworks */,
+				2274440E2D54027900220BA5 /* FirebaseFirestore in Frameworks */,
+				227444102D54027900220BA5 /* FirebaseInAppMessaging-Beta in Frameworks */,
+				227444182D5403A000220BA5 /* JGProgressHUD in Frameworks */,
+				227443E92D53FF5900220BA5 /* FirebaseMessaging in Frameworks */,
+				2274440C2D54027900220BA5 /* FirebaseDatabase in Frameworks */,
+				227443EB2D53FF5900220BA5 /* FirebaseStorage in Frameworks */,
+				227443DF2D53FF5900220BA5 /* FirebaseAuth in Frameworks */,
+				227444082D54027900220BA5 /* FirebaseAuth in Frameworks */,
+				227443E12D53FF5900220BA5 /* FirebaseCore in Frameworks */,
+				227443D62D53FF1500220BA5 /* Nuke in Frameworks */,
+				227443DB2D53FF5900220BA5 /* FirebaseAnalytics in Frameworks */,
+				227443D82D53FF1500220BA5 /* NukeExtensions in Frameworks */,
+				227443DD2D53FF5900220BA5 /* FirebaseAppCheck in Frameworks */,
+				62769E4E81420D9573A3F30F /* Pods_CryptoChat.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1BF1518D5BA861CB39BBACC7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3EAED42A2CC634A85C035AF7 /* Pods-CryptoChat.debug.xcconfig */,
+				F7296DF0FD16979C046D1818 /* Pods-CryptoChat.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		220954ED2D2318AC00CFD5AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		220955B22D231ACB00CFD5AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		220F34452D2D86D800CDD41C /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				220F34422D2D86D800CDD41C /* FriendProfileViewController.swift */,
+				220F34432D2D86D800CDD41C /* FriendsViewController.swift */,
+				220F34442D2D86D800CDD41C /* InviteFriendsViewController.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		222EED792D207C3B00A1573A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		224D36E82D207C5800639976 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		225ECEBE2D2324BD005F6582 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22612FCA2D1F6A3E00E5AF17 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2261305F2D1F6A8200E5AF17 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		226B6B5B2D231697002BA5C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		227444162D5403A000220BA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6DED2EA6D659B18CBC1A2F72 /* Pods_CryptoChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2275E99B2D23396E003854FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2277CDD42D2075B600F9587B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		228E204D2D231CD000185F7B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2292F72D2D2321B700D44A77 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22A219B82D207C700002F908 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22AA45722D232DA100E42A79 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22DA2D3F2D53F1F40020832D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22DA2D4A2D53F1F40020832D /* SmileLock.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22DA2D6A2D53F3A80020832D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22DA2D832D53F3BD0020832D /* SmileLock.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22DA2DAF2D53F7B10020832D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22DA2DC82D53F7D40020832D /* SmileLock.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22DBEE252D23182400C5075C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22DD779F2D207A8C00AB1AAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22E7D85D2D233C9600E0EA7C /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				22E7D8592D233C9600E0EA7C /* ChatFriendViewController.swift */,
+				22E7D85A2D233C9600E0EA7C /* ChatsViewController.swift */,
+				22E7D85B2D233C9600E0EA7C /* ChatViewController.swift */,
+				22E7D85C2D233C9600E0EA7C /* SearchFriendViewController.swift */,
+			);
+			path = Chats;
+			sourceTree = "<group>";
+		};
+		22E7D8602D233C9600E0EA7C /* DatabaseControllers */ = {
+			isa = PBXGroup;
+			children = (
+				22E7D85E2D233C9600E0EA7C /* StorageDatabaseController.swift */,
+				22E7D85F2D233C9600E0EA7C /* UserDatabaseController.swift */,
+			);
+			path = DatabaseControllers;
+			sourceTree = "<group>";
+		};
+		22E7D8662D233C9600E0EA7C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				22E7D8612D233C9600E0EA7C /* AutoLockController.swift */,
+				22E7D8622D233C9600E0EA7C /* BlockedViewController.swift */,
+				22E7D8632D233C9600E0EA7C /* PasscodeViewController.swift */,
+				22E7D8642D233C9600E0EA7C /* ProfileViewController.swift */,
+				22E7D8652D233C9600E0EA7C /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		22E7D86B2D233C9600E0EA7C /* SignInUp */ = {
+			isa = PBXGroup;
+			children = (
+				22E7D8672D233C9600E0EA7C /* EmailViewController.swift */,
+				22E7D8682D233C9600E0EA7C /* PhoneViewController.swift */,
+				22E7D8692D233C9600E0EA7C /* SigninViewController.swift */,
+				22E7D86A2D233C9600E0EA7C /* UsernameViewController.swift */,
+			);
+			path = SignInUp;
+			sourceTree = "<group>";
+		};
+		22E7D86E2D233C9600E0EA7C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				22F253EA2D2DEC7E0050B727 /* Encryption */,
+				220F34492D2D86E200CDD41C /* PhotoViewController.swift */,
+				220F34452D2D86D800CDD41C /* Friends */,
+				22E7D85D2D233C9600E0EA7C /* Chats */,
+				22E7D8602D233C9600E0EA7C /* DatabaseControllers */,
+				22E7D8662D233C9600E0EA7C /* Settings */,
+				22E7D86B2D233C9600E0EA7C /* SignInUp */,
+				22E7D86C2D233C9600E0EA7C /* OnboardingViewController.swift */,
+				22E7D86D2D233C9600E0EA7C /* StarterViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		22E7D8702D233C9600E0EA7C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22E7D86F2D233C9600E0EA7C /* Models.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		22E7D8732D233C9600E0EA7C /* PushNotificationsManager */ = {
+			isa = PBXGroup;
+			children = (
+				22E7D8712D233C9600E0EA7C /* PushNotificationManager.swift */,
+				22E7D8722D233C9600E0EA7C /* PushNotificationSender.swift */,
+			);
+			path = PushNotificationsManager;
+			sourceTree = "<group>";
+		};
+		22E7D8772D233C9600E0EA7C /* SwiftyOnboard */ = {
+			isa = PBXGroup;
+			children = (
+				22E7D8742D233C9600E0EA7C /* SwiftyOnboard.swift */,
+				22E7D8752D233C9600E0EA7C /* SwiftyOnboardOverlay.swift */,
+				22E7D8762D233C9600E0EA7C /* SwiftyOnboardPage.swift */,
+			);
+			path = SwiftyOnboard;
+			sourceTree = "<group>";
+		};
+		22E7D8822D233C9600E0EA7C /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				22DA2D4C2D53F33E0020832D /* JGProgressHUD */,
+				22E7D8732D233C9600E0EA7C /* PushNotificationsManager */,
+				22E7D8772D233C9600E0EA7C /* SwiftyOnboard */,
+				22E7D8782D233C9600E0EA7C /* animation-lock.json */,
+				22A96BD12D5428FC00D2D510 /* lnk-chats-edc6767c8fec.json */,
+				22E7D8792D233C9600E0EA7C /* AppDelegate.swift */,
+				22E7D87A2D233C9600E0EA7C /* Assets.xcassets */,
+				22E7D87B2D233C9600E0EA7C /* Countries.swift */,
+				22E7D87C2D233C9600E0EA7C /* CryptoChat.xcdatamodeld */,
+				22E7D87D2D233C9600E0EA7C /* Extensions.swift */,
+				22E7D87E2D233C9600E0EA7C /* GoogleService-Info.plist */,
+				22E7D87F2D233C9600E0EA7C /* Info.plist */,
+				22E7D8802D233C9600E0EA7C /* Reachability.swift */,
+				22E7D8812D233C9600E0EA7C /* SceneDelegate.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		22E7D8832D233C9600E0EA7C /* Calls */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Calls;
+			sourceTree = "<group>";
+		};
+		22E7D88A2D233C9600E0EA7C /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				22E7D8842D233C9600E0EA7C /* ChatFriendViewCell.swift */,
+				22E7D8862D233C9600E0EA7C /* Chats.storyboard */,
+				22E7D8872D233C9600E0EA7C /* ChatViewCell.swift */,
+				22E7D8882D233C9600E0EA7C /* ChatViewCell.xib */,
+				22E7D8892D233C9600E0EA7C /* NewChatViewCell.swift */,
+			);
+			path = Chats;
+			sourceTree = "<group>";
+		};
+		22E7D8912D233C9600E0EA7C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				22E7D88B2D233C9600E0EA7C /* BlockedViewCell.swift */,
+				22E7D88C2D233C9600E0EA7C /* BlockedViewCell.xib */,
+				22E7D88E2D233C9600E0EA7C /* Profile.storyboard */,
+				22E7D88F2D233C9600E0EA7C /* ProfileViewCell.swift */,
+				22E7D8902D233C9600E0EA7C /* SettingsViewCell.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		22E7D8962D233C9600E0EA7C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				220F34352D2D75F200CDD41C /* Friends */,
+				22E7D8832D233C9600E0EA7C /* Calls */,
+				22E7D88A2D233C9600E0EA7C /* Chats */,
+				22E7D8912D233C9600E0EA7C /* Settings */,
+				22E7D8932D233C9600E0EA7C /* LaunchScreen.storyboard */,
+				22E7D8952D233C9600E0EA7C /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		22E7D8982D233C9600E0EA7C /* CryptoChat */ = {
+			isa = PBXGroup;
+			children = (
+				22E7D86E2D233C9600E0EA7C /* Controller */,
+				22E7D8702D233C9600E0EA7C /* Model */,
+				22E7D8822D233C9600E0EA7C /* Support */,
+				22E7D8962D233C9600E0EA7C /* View */,
+				22E7D8972D233C9600E0EA7C /* CryptoChat.entitlements */,
+			);
+			path = CryptoChat;
+			sourceTree = "<group>";
+		};
+		22F253EA2D2DEC7E0050B727 /* Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				22F253E92D2DEC7E0050B727 /* FaceDetectionViewController.swift */,
+				22F253EC2D2DEC850050B727 /* Encryption.swift */,
+			);
+			path = Encryption;
+			sourceTree = "<group>";
+		};
+		22FDE13D2CE10B7800D57299 = {
+			isa = PBXGroup;
+			children = (
+				22E7D8982D233C9600E0EA7C /* CryptoChat */,
+				227444162D5403A000220BA5 /* Frameworks */,
+				2203AAAE2D5698EA0067257F /* CryptoChat.app */,
+				1BF1518D5BA861CB39BBACC7 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22FDE1452CE10B7800D57299 /* CryptoChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22FDE15C2CE10B7B00D57299 /* Build configuration list for PBXNativeTarget "CryptoChat" */;
+			buildPhases = (
+				256F5DE52DDC3AED292FE3B9 /* [CP] Check Pods Manifest.lock */,
+				22FDE1422CE10B7800D57299 /* Sources */,
+				22FDE1432CE10B7800D57299 /* Frameworks */,
+				22FDE1442CE10B7800D57299 /* Resources */,
+				5FA7C0E2D2E87149721790C0 /* [CP] Embed Pods Frameworks */,
+				221B59B42D5ABF9E0020F225 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				220F34352D2D75F200CDD41C /* Friends */,
+			);
+			name = CryptoChat;
+			productName = CryptoChat;
+			productReference = 2203AAAE2D5698EA0067257F /* CryptoChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22FDE13E2CE10B7800D57299 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1610;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					22FDE1452CE10B7800D57299 = {
+						CreatedOnToolsVersion = 16.1;
+					};
+				};
+			};
+			buildConfigurationList = 22FDE1412CE10B7800D57299 /* Build configuration list for PBXProject "CryptoChat" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				es,
+				ja,
+			);
+			mainGroup = 22FDE13D2CE10B7800D57299;
+			packageReferences = (
+				227443C92D53FEE400220BA5 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				227443CE2D53FEEF00220BA5 /* XCRemoteSwiftPackageReference "MessageKit" */,
+				227443D12D53FEFF00220BA5 /* XCRemoteSwiftPackageReference "fan-menu" */,
+				227443D42D53FF0700220BA5 /* XCRemoteSwiftPackageReference "Nuke" */,
+				227443D92D53FF5900220BA5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				2274441B2D5403E000220BA5 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
+				22A96BCE2D54281D00D2D510 /* XCRemoteSwiftPackageReference "Swift-JWT" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 22FDE13D2CE10B7800D57299;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2277CDD42D2075B600F9587B /* Products */;
+					ProjectRef = 2277CDD32D2075B600F9587B /* CryptoChat.xcodeproj */;
+				},
+				{
+					ProductGroup = 22DD779F2D207A8C00AB1AAF /* Products */;
+					ProjectRef = 22DD779E2D207A8C00AB1AAF /* CryptoChat.xcodeproj */;
+				},
+				{
+					ProductGroup = 220954ED2D2318AC00CFD5AB /* Products */;
+					ProjectRef = 220954EC2D2318AC00CFD5AB /* CryptoChat.xcodeproj */;
+				},
+				{
+					ProductGroup = 22612FCA2D1F6A3E00E5AF17 /* Products */;
+					ProjectRef = 22612FC82D1F6A3E00E5AF17 /* CryptoChat.xcodeproj */;
+				},
+				{
+					ProductGroup = 220955B22D231ACB00CFD5AB /* Products */;
+					ProjectRef = 220955B12D231ACB00CFD5AB /* CryptoChat.xcodeproj */;
+				},
+				{
+					ProductGroup = 22A219B82D207C700002F908 /* Products */;
+					ProjectRef = 22A219B72D207C700002F908 /* CryptoChat.xcodeproj */;
+				},
+				{
+					ProductGroup = 222EED792D207C3B00A1573A /* Products */;
+					ProjectRef = 222EED782D207C3B00A1573A /* CryptoChat.xcodeproj */;
+				},
+				{
+					ProductGroup = 225ECEBE2D2324BD005F6582 /* Products */;
+					ProjectRef = 225ECEBD2D2324BD005F6582 /* CryptoChat.xcodeproj */;
+				},
+				{
+					ProductGroup = 228E204D2D231CD000185F7B /* Products */;
+					ProjectRef = 228E204C2D231CD000185F7B /* CryptoChat.xcodeproj */;
+				},
+				{
+					ProductGroup = 224D36E82D207C5800639976 /* Products */;
+					ProjectRef = 224D36E72D207C5800639976 /* CryptoChat.xcodeproj */;
+				},
+				{
+					ProductGroup = 22DBEE252D23182400C5075C /* Products */;
+					ProjectRef = 22DBEE242D23182400C5075C /* CryptoChat.xcodeproj */;
+				},
+				{
+					ProductGroup = 2275E99B2D23396E003854FD /* Products */;
+					ProjectRef = 2275E99A2D23396E003854FD /* CryptoChat.xcodeproj */;
+				},
+				{
+					ProductGroup = 2292F72D2D2321B700D44A77 /* Products */;
+					ProjectRef = 2292F72C2D2321B700D44A77 /* CryptoChat.xcodeproj */;
+				},
+				{
+					ProductGroup = 22AA45722D232DA100E42A79 /* Products */;
+					ProjectRef = 22AA45712D232DA100E42A79 /* CryptoChat.xcodeproj */;
+				},
+				{
+					ProductGroup = 2261305F2D1F6A8200E5AF17 /* Products */;
+					ProjectRef = 2261305D2D1F6A8200E5AF17 /* CryptoChat.xcodeproj */;
+				},
+				{
+					ProductGroup = 226B6B5B2D231697002BA5C1 /* Products */;
+					ProjectRef = 226B6B5A2D231697002BA5C1 /* CryptoChat.xcodeproj */;
+				},
+				{
+					ProductGroup = 22DA2D6A2D53F3A80020832D /* Products */;
+					ProjectRef = 22DA2D692D53F3A80020832D /* SmileLock.xcodeproj */;
+				},
+				{
+					ProductGroup = 22DA2DAF2D53F7B10020832D /* Products */;
+					ProjectRef = 22DA2DAE2D53F7B10020832D /* SmileLock.xcodeproj */;
+				},
+				{
+					ProductGroup = 22DA2D3F2D53F1F40020832D /* Products */;
+					ProjectRef = 22DA2D3D2D53F1F40020832D /* SmileLock.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				22FDE1452CE10B7800D57299 /* CryptoChat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		22DA2D4A2D53F1F40020832D /* SmileLock.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SmileLock.framework;
+			remoteRef = 22DA2D492D53F1F40020832D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		22DA2D832D53F3BD0020832D /* SmileLock.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SmileLock.framework;
+			remoteRef = 22DA2D822D53F3BD0020832D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		22DA2DC82D53F7D40020832D /* SmileLock.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SmileLock.framework;
+			remoteRef = 22DA2DC72D53F7D40020832D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22FDE1442CE10B7800D57299 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22E7D89A2D233C9600E0EA7C /* Main.storyboard in Resources */,
+				22E7D89B2D233C9600E0EA7C /* ChatViewCell.xib in Resources */,
+				22E7D89C2D233C9600E0EA7C /* animation-lock.json in Resources */,
+				22E7D89E2D233C9600E0EA7C /* Chats.storyboard in Resources */,
+				22E7D89F2D233C9600E0EA7C /* Assets.xcassets in Resources */,
+				22E7D8A02D233C9600E0EA7C /* BlockedViewCell.xib in Resources */,
+				22E7D8A12D233C9600E0EA7C /* LaunchScreen.storyboard in Resources */,
+				22A96BD22D5428FC00D2D510 /* lnk-chats-edc6767c8fec.json in Resources */,
+				22E7D8A22D233C9600E0EA7C /* GoogleService-Info.plist in Resources */,
+				22E7D8A32D233C9600E0EA7C /* Profile.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		221B59B42D5ABF9E0020F225 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}.debug.dylib",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+		256F5DE52DDC3AED292FE3B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CryptoChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FA7C0E2D2E87149721790C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CryptoChat/Pods-CryptoChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CryptoChat/Pods-CryptoChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CryptoChat/Pods-CryptoChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22FDE1422CE10B7800D57299 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22E7D8A42D233C9600E0EA7C /* PushNotificationManager.swift in Sources */,
+				22E7D8A52D233C9600E0EA7C /* PasscodeViewController.swift in Sources */,
+				22E7D8A62D233C9600E0EA7C /* PushNotificationSender.swift in Sources */,
+				220F34462D2D86D800CDD41C /* FriendProfileViewController.swift in Sources */,
+				220F34472D2D86D800CDD41C /* FriendsViewController.swift in Sources */,
+				220F34482D2D86D800CDD41C /* InviteFriendsViewController.swift in Sources */,
+				22E7D8A72D233C9600E0EA7C /* SettingsViewController.swift in Sources */,
+				22E7D8A82D233C9600E0EA7C /* AutoLockController.swift in Sources */,
+				22E7D8A92D233C9600E0EA7C /* PhoneViewController.swift in Sources */,
+				22E7D8AA2D233C9600E0EA7C /* SigninViewController.swift in Sources */,
+				22F253ED2D2DEC8A0050B727 /* Encryption.swift in Sources */,
+				22E7D8AB2D233C9600E0EA7C /* AppDelegate.swift in Sources */,
+				22F253EB2D2DEC7E0050B727 /* FaceDetectionViewController.swift in Sources */,
+				220F344A2D2D86EA00CDD41C /* PhotoViewController.swift in Sources */,
+				22E7D8AC2D233C9600E0EA7C /* ChatViewController.swift in Sources */,
+				22E7D8AD2D233C9600E0EA7C /* ProfileViewController.swift in Sources */,
+				22E7D8AE2D233C9600E0EA7C /* EmailViewController.swift in Sources */,
+				22E7D8AF2D233C9600E0EA7C /* ChatViewCell.swift in Sources */,
+				22E7D8B02D233C9600E0EA7C /* SettingsViewCell.swift in Sources */,
+				22E7D8B12D233C9600E0EA7C /* Reachability.swift in Sources */,
+				22E7D8B22D233C9600E0EA7C /* SceneDelegate.swift in Sources */,
+				22E7D8B32D233C9600E0EA7C /* StarterViewController.swift in Sources */,
+				22E7D8B42D233C9600E0EA7C /* OnboardingViewController.swift in Sources */,
+				22E7D8B52D233C9600E0EA7C /* ProfileViewCell.swift in Sources */,
+				22E7D8B62D233C9600E0EA7C /* SwiftyOnboardPage.swift in Sources */,
+				22E7D8B72D233C9600E0EA7C /* BlockedViewCell.swift in Sources */,
+				22E7D8B82D233C9600E0EA7C /* StorageDatabaseController.swift in Sources */,
+				22E7D8B92D233C9600E0EA7C /* ChatFriendViewController.swift in Sources */,
+				22E7D8BA2D233C9600E0EA7C /* SwiftyOnboardOverlay.swift in Sources */,
+				22E7D8BB2D233C9600E0EA7C /* NewChatViewCell.swift in Sources */,
+				22E7D8BC2D233C9600E0EA7C /* ChatFriendViewCell.swift in Sources */,
+				22E7D8BD2D233C9600E0EA7C /* BlockedViewController.swift in Sources */,
+				22E7D8BE2D233C9600E0EA7C /* SearchFriendViewController.swift in Sources */,
+				22E7D8BF2D233C9600E0EA7C /* Models.swift in Sources */,
+				22E7D8C02D233C9600E0EA7C /* Countries.swift in Sources */,
+				22E7D8C12D233C9600E0EA7C /* UserDatabaseController.swift in Sources */,
+				22E7D8C22D233C9600E0EA7C /* Extensions.swift in Sources */,
+				22E7D8C32D233C9600E0EA7C /* SwiftyOnboard.swift in Sources */,
+				22E7D8C42D233C9600E0EA7C /* CryptoChat.xcdatamodeld in Sources */,
+				22E7D8C52D233C9600E0EA7C /* UsernameViewController.swift in Sources */,
+				22E7D8C62D233C9600E0EA7C /* ChatsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		22E7D8862D233C9600E0EA7C /* Chats.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22E7D8852D233C9600E0EA7C /* Base */,
+			);
+			name = Chats.storyboard;
+			sourceTree = "<group>";
+		};
+		22E7D88E2D233C9600E0EA7C /* Profile.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22E7D88D2D233C9600E0EA7C /* Base */,
+			);
+			name = Profile.storyboard;
+			sourceTree = "<group>";
+		};
+		22E7D8932D233C9600E0EA7C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22E7D8922D233C9600E0EA7C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		22E7D8952D233C9600E0EA7C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22E7D8942D233C9600E0EA7C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		22FDE15D2CE10B7B00D57299 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EAED42A2CC634A85C035AF7 /* Pods-CryptoChat.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CryptoChat/CryptoChat.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2.0.1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = SJK4QJY486;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXCLUDED_ARCHS = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CryptoChat/Support/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "LNK Chats";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need this so you can take photos and videos and share with your contacts.";
+				INFOPLIST_KEY_NSContactsUsageDescription = "Allowing this will hel you find friends and more. Your contacts will not be saved on Lock And Key's server.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need this for verifying is you, who is revealing the messages.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need this so you can share videos with your contacts.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need this so you can share photos and videos with your contacts.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need this so you can take photos and videos for sharing or private use.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0.0;
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jdev.CryptoChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Provision MacStudio LNK";
+				SKIP_INSTALL = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		22FDE15E2CE10B7B00D57299 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7296DF0FD16979C046D1818 /* Pods-CryptoChat.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CryptoChat/CryptoChat.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2.0.1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = SJK4QJY486;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXCLUDED_ARCHS = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CryptoChat/Support/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "LNK Chats";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need this so you can take photos and videos and share with your contacts.";
+				INFOPLIST_KEY_NSContactsUsageDescription = "Allowing this will hel you find friends and more. Your contacts will not be saved on Lock And Key's server.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need this for verifying is you, who is revealing the messages.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need this so you can share videos with your contacts.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need this so you can share photos and videos with your contacts.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need this so you can take photos and videos for sharing or private use.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0.0;
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jdev.CryptoChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Provision MacStudio LNK";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		22FDE15F2CE10B7B00D57299 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		22FDE1602CE10B7B00D57299 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22FDE1412CE10B7800D57299 /* Build configuration list for PBXProject "CryptoChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22FDE15F2CE10B7B00D57299 /* Debug */,
+				22FDE1602CE10B7B00D57299 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22FDE15C2CE10B7B00D57299 /* Build configuration list for PBXNativeTarget "CryptoChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22FDE15D2CE10B7B00D57299 /* Debug */,
+				22FDE15E2CE10B7B00D57299 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		227443C92D53FEE400220BA5 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.1;
+			};
+		};
+		227443CE2D53FEEF00220BA5 /* XCRemoteSwiftPackageReference "MessageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MessageKit/MessageKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		227443D12D53FEFF00220BA5 /* XCRemoteSwiftPackageReference "fan-menu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/fan-menu";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.7.6;
+			};
+		};
+		227443D42D53FF0700220BA5 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.8.0;
+			};
+		};
+		227443D92D53FF5900220BA5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.8.1;
+			};
+		};
+		2274441B2D5403E000220BA5 /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Yummypets/YPImagePicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
+		22A96BCE2D54281D00D2D510 /* XCRemoteSwiftPackageReference "Swift-JWT" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kitura/Swift-JWT.git";
+			requirement = {
+				kind = exactVersion;
+				version = 3.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		227443CF2D53FEEF00220BA5 /* MessageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227443CE2D53FEEF00220BA5 /* XCRemoteSwiftPackageReference "MessageKit" */;
+			productName = MessageKit;
+		};
+		227443D22D53FEFF00220BA5 /* FanMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227443D12D53FEFF00220BA5 /* XCRemoteSwiftPackageReference "fan-menu" */;
+			productName = FanMenu;
+		};
+		227443D52D53FF1500220BA5 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227443D42D53FF0700220BA5 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		227443D72D53FF1500220BA5 /* NukeExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227443D42D53FF0700220BA5 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeExtensions;
+		};
+		227443DA2D53FF5900220BA5 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227443D92D53FF5900220BA5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		227443DC2D53FF5900220BA5 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227443D92D53FF5900220BA5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		227443DE2D53FF5900220BA5 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227443D92D53FF5900220BA5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		227443E02D53FF5900220BA5 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227443D92D53FF5900220BA5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		227443E22D53FF5900220BA5 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227443D92D53FF5900220BA5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		227443E42D53FF5900220BA5 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227443D92D53FF5900220BA5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		227443E62D53FF5900220BA5 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227443D92D53FF5900220BA5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		227443E82D53FF5900220BA5 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227443D92D53FF5900220BA5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		227443EA2D53FF5900220BA5 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227443D92D53FF5900220BA5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		227444072D54027900220BA5 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227443D92D53FF5900220BA5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		227444092D54027900220BA5 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227443D92D53FF5900220BA5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		2274440B2D54027900220BA5 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227443D92D53FF5900220BA5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		2274440D2D54027900220BA5 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227443D92D53FF5900220BA5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		2274440F2D54027900220BA5 /* FirebaseInAppMessaging-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227443D92D53FF5900220BA5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessaging-Beta";
+		};
+		227444112D54027900220BA5 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227443D92D53FF5900220BA5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		227444132D54027900220BA5 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227443D92D53FF5900220BA5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		227444172D5403A000220BA5 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = JGProgressHUD;
+		};
+		2274441C2D5403E000220BA5 /* YPImagePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2274441B2D5403E000220BA5 /* XCRemoteSwiftPackageReference "YPImagePicker" */;
+			productName = YPImagePicker;
+		};
+		2274441E2D54048E00220BA5 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227443C92D53FEE400220BA5 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		22A96BCF2D54281D00D2D510 /* SwiftJWT */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22A96BCE2D54281D00D2D510 /* XCRemoteSwiftPackageReference "Swift-JWT" */;
+			productName = SwiftJWT;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		22E7D87C2D233C9600E0EA7C /* CryptoChat.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				22E7D8992D233C9600E0EA7C /* CryptoChat.xcdatamodel */,
+			);
+			currentVersion = 22E7D8992D233C9600E0EA7C /* CryptoChat.xcdatamodel */;
+			path = CryptoChat.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 22FDE13E2CE10B7800D57299 /* Project object */;
+}

@@ -1,0 +1,42 @@
+
+/* Class = "UILabel"; text = "Save in Album"; ObjectID = "0NN-QB-gZ7"; */
+"0NN-QB-gZ7.text" = "Guardar en Galeria";
+
+/* Class = "UINavigationItem"; title = "My Friends"; ObjectID = "5xc-PC-lY5"; */
+"5xc-PC-lY5.title" = "Mis Contactos";
+
+/* Class = "UILabel"; text = "Chat"; ObjectID = "Fzq-YA-Dmk"; */
+"Fzq-YA-Dmk.text" = "Chat";
+
+/* Class = "UILabel"; text = "No friends yet"; ObjectID = "KJL-AC-klz"; */
+"KJL-AC-klz.text" = "No amigos aun";
+
+/* Class = "UILabel"; text = "maybeusernam"; ObjectID = "LMb-rR-2Q7"; */
+"LMb-rR-2Q7.text" = "maybeusernam";
+
+/* Class = "UILabel"; text = "Clear Chat"; ObjectID = "QcO-vR-kcW"; */
+"QcO-vR-kcW.text" = "Limpiar Chat";
+
+/* Class = "UILabel"; text = "65000454"; ObjectID = "T1b-Id-cvL"; */
+"T1b-Id-cvL.text" = "65000454";
+
+/* Class = "UILabel"; text = "Call"; ObjectID = "fAs-0v-shw"; */
+"fAs-0v-shw.text" = "Llamar";
+
+/* Class = "UILabel"; text = "Accept"; ObjectID = "jEF-KF-UnF"; */
+"jEF-KF-UnF.text" = "Aceptar";
+
+/* Class = "UIViewController"; title = "FriendProfileViewController"; ObjectID = "ks7-tV-ADq"; */
+"ks7-tV-ADq.title" = "FriendProfileViewController";
+
+/* Class = "UILabel"; text = "maybe text masd asd asd asd asd asd asd asdaybe not HImaybe text masd asd asd asd asd asd asd asdaybe not HImaybe text masd asd asd asd asd asd asd asdaybe not HImaybe text masd asd asd asd asd asd asd asdaybe not HI"; ObjectID = "ltf-pB-cna"; */
+"ltf-pB-cna.text" = "maybe text masd asd asd asd asd asd asd asdaybe not HImaybe text masd asd asd asd asd asd asd asdaybe not HImaybe text masd asd asd asd asd asd asd asdaybe not HImaybe text masd asd asd asd asd asd asd asdaybe not HI";
+
+/* Class = "UILabel"; text = "Reject"; ObjectID = "n0d-ly-bJ6"; */
+"n0d-ly-bJ6.text" = "Rechazar";
+
+/* Class = "UILabel"; text = "Cancel Request"; ObjectID = "rEJ-Xj-HGZ"; */
+"rEJ-Xj-HGZ.text" = "Cancelar Solicitud";
+
+/* Class = "UILabel"; text = "Block"; ObjectID = "vsL-LT-d96"; */
+"vsL-LT-d96.text" = "Bloquear";

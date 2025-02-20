@@ -1,0 +1,25 @@
+PODS:
+  - PhoneNumberKit (3.8.0):
+    - PhoneNumberKit/PhoneNumberKitCore (= 3.8.0)
+    - PhoneNumberKit/UIKit (= 3.8.0)
+  - PhoneNumberKit/PhoneNumberKitCore (3.8.0)
+  - PhoneNumberKit/UIKit (3.8.0):
+    - PhoneNumberKit/PhoneNumberKitCore
+  - SmileLock (3.0.7)
+
+DEPENDENCIES:
+  - PhoneNumberKit (~> 3.7)
+  - SmileLock
+
+SPEC REPOS:
+  trunk:
+    - PhoneNumberKit
+    - SmileLock
+
+SPEC CHECKSUMS:
+  PhoneNumberKit: ec00ab8cef5342c1dc49fadb99d23fa7e66cf0ef
+  SmileLock: 46b847b3ad963e3140d083b53f09036a4d210537
+
+PODFILE CHECKSUM: e653133f2b8d03aabdf7be8b01633257543c9111
+
+COCOAPODS: 1.16.2

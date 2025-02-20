@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sCy-EO-Mh0">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ChatsViewController-->
+        <scene sceneID="Fcg-tu-nmm">
+            <objects>
+                <viewController storyboardIdentifier="ChatsViewController" title="ChatsViewController" id="sCy-EO-Mh0" customClass="ChatsViewController" customModule="CryptoChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NTT-Ln-Sjv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FIh-Tp-23s">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lB8-GG-9sp">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyContent" translatesAutoresizingMaskIntoConstraints="NO" id="vnK-xx-XdO">
+                                        <rect key="frame" x="52" y="457.5" width="310.5" height="310.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="vnK-xx-XdO" secondAttribute="height" multiplier="1:1" id="xEz-kU-ekT"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No chats yet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HTh-PM-A2S">
+                                        <rect key="frame" x="110.5" y="362.5" width="193" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="WZu-J2-C0C"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="38"/>
+                                        <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="vnK-xx-XdO" firstAttribute="width" secondItem="lB8-GG-9sp" secondAttribute="width" multiplier="0.75" id="GDS-as-YdP"/>
+                                    <constraint firstAttribute="bottom" secondItem="vnK-xx-XdO" secondAttribute="bottom" constant="50" id="a2W-bo-aC7"/>
+                                    <constraint firstItem="vnK-xx-XdO" firstAttribute="centerX" secondItem="lB8-GG-9sp" secondAttribute="centerX" id="gbt-gv-5bn"/>
+                                    <constraint firstItem="vnK-xx-XdO" firstAttribute="top" secondItem="HTh-PM-A2S" secondAttribute="bottom" constant="50" id="lW5-d2-QeX"/>
+                                    <constraint firstItem="HTh-PM-A2S" firstAttribute="centerX" secondItem="lB8-GG-9sp" secondAttribute="centerX" id="vvn-8S-XG9"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmJ-Be-0hy" customClass="FanMenu" customModule="FanMenu">
+                                <rect key="frame" x="244" y="626" width="250" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="NYB-Ou-OFU"/>
+                                    <constraint firstAttribute="width" constant="250" id="cEr-jx-ECx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="S6i-0k-feN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FIh-Tp-23s" firstAttribute="leading" secondItem="S6i-0k-feN" secondAttribute="leading" id="7Hd-rB-2PG"/>
+                            <constraint firstItem="S6i-0k-feN" firstAttribute="trailing" secondItem="FIh-Tp-23s" secondAttribute="trailing" id="ALH-d4-LhL"/>
+                            <constraint firstItem="lB8-GG-9sp" firstAttribute="leading" secondItem="S6i-0k-feN" secondAttribute="leading" id="Uc4-UC-BCs"/>
+                            <constraint firstItem="S6i-0k-feN" firstAttribute="trailing" secondItem="lB8-GG-9sp" secondAttribute="trailing" id="Yj6-Wh-ujK"/>
+                            <constraint firstItem="S6i-0k-feN" firstAttribute="trailing" secondItem="gmJ-Be-0hy" secondAttribute="trailing" constant="-80" id="YxW-DK-pGL"/>
+                            <constraint firstItem="lB8-GG-9sp" firstAttribute="top" secondItem="S6i-0k-feN" secondAttribute="top" id="hgL-pr-hP6"/>
+                            <constraint firstItem="S6i-0k-feN" firstAttribute="bottom" secondItem="lB8-GG-9sp" secondAttribute="bottom" id="ib7-3M-e6k"/>
+                            <constraint firstItem="S6i-0k-feN" firstAttribute="bottom" secondItem="FIh-Tp-23s" secondAttribute="bottom" id="mLb-DK-QY8"/>
+                            <constraint firstAttribute="bottom" secondItem="gmJ-Be-0hy" secondAttribute="bottom" constant="20" id="pdp-Ez-5LT"/>
+                            <constraint firstItem="FIh-Tp-23s" firstAttribute="top" secondItem="S6i-0k-feN" secondAttribute="top" id="zKS-6z-5DO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Chats" id="qTk-vR-tyn"/>
+                    <connections>
+                        <outlet property="emptyView" destination="lB8-GG-9sp" id="kaz-Nx-JKz"/>
+                        <outlet property="fanMenu" destination="gmJ-Be-0hy" id="QTA-aJ-OAf"/>
+                        <outlet property="tableView" destination="FIh-Tp-23s" id="fT5-Iy-JsO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="78c-cV-t0Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5386.9565217391309" y="-323.4375"/>
+        </scene>
+        <!--ChatViewController-->
+        <scene sceneID="1S1-9A-PKz">
+            <objects>
+                <viewController storyboardIdentifier="ChatViewController" title="ChatViewController" id="Fv3-un-F5M" customClass="ChatViewController" customModule="CryptoChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TQM-bb-okx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="7tL-ja-efR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bol-T9-lNB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5rg-ce-AUS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6217" y="-323"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="EmptyContent" width="1897" height="1775"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
