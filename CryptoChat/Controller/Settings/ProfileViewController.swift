@@ -56,6 +56,7 @@ class ProfileViewController: UIViewController {
     var phoneNumber = ""
     var profileImageURL: URL?
     var isPrivate = false
+    var saveMediaInDevice = true
     private let spinner = JGProgressHUD(style: .dark)
     var allowNotification = false
     var models = [Section]()
@@ -101,14 +102,10 @@ class ProfileViewController: UIViewController {
                     vc.modalPresentationStyle = .formSheet
                     self.present(vc, animated: true, completion: nil)
                 })),
-                //                .staticCell(model:  SettingsOptions(titleSetting: "Private", icon: UIImage(named: "doc.text.magnifyingglass"), iconBackgroundColor: .systemOrange, handler: {
-                //                    print ("chose username")
-                //                    self.changeToPrivate(isOn: self.isPrivate)
-                //                })),
-                    .switchCell(model: SettingsSwitchOptions(titleSetting: "Private", icon: UIImage(named: "doc.text.magnifyingglass"), iconBackgroundColor: .systemOrange, isOn: isPrivate, handler: {
-                        print ("chose username")
-                        self.changeToPrivate()
-                    })),
+                .switchCell(model: SettingsSwitchOptions(titleSetting: "Private", icon: UIImage(named: "doc.text.magnifyingglass"), iconBackgroundColor: .systemOrange, isOn: isPrivate, handler: {
+                    print ("chose username")
+                    self.changeToPrivate()
+                })),
                 .staticCell(model:  SettingsOptions(titleSetting: "Auto Lock", icon: UIImage(systemName: "lock.rotation"), iconBackgroundColor: .red, handler: {
                     let vc = self.storyboard?.instantiateViewController(identifier: "PasscodeViewController") as! PasscodeViewController
                     vc.statusOfPasscode = .verifyPasscode
@@ -132,15 +129,15 @@ class ProfileViewController: UIViewController {
                     self.changeToAllowNotifications(isOn: self.allowNotification)
                     print ("chose allow notifications")
                 })),
-                //                .switchCell(model: SettingsSwitchOptions(titleSetting: "Allow Notifications", icon: UIImage(systemName: "bell"), iconBackgroundColor: .lightGray,  isOn: self.allowNotification, handler: {
-                //                    self.changeToAllowNotifications(isOn: self.allowNotification)
-                //                    print ("chose allow notifications")
-                //                })),
-                    .staticCell(model: SettingsOptions(titleSetting: "Color Theme", icon: UIImage(named: "paintbrush"), iconBackgroundColor: .systemBlue, handler: {
-                        let vc = SettingsViewController(selectedSetting: 2)
-                        vc.navigationItem.largeTitleDisplayMode = .always
-                        self.navigationController!.pushViewController(vc, animated: true)
-                    }))
+                .staticCell(model: SettingsOptions(titleSetting: "Color Theme", icon: UIImage(named: "paintbrush"), iconBackgroundColor: .systemBlue, handler: {
+                    let vc = SettingsViewController(selectedSetting: 2)
+                    vc.navigationItem.largeTitleDisplayMode = .always
+                    self.navigationController!.pushViewController(vc, animated: true)
+                })),
+                .switchCell(model: SettingsSwitchOptions(titleSetting: "Save media in Gallery", icon: UIImage(systemName: "square.and.arrow.down"), iconBackgroundColor: .systemCyan, isOn: saveMediaInDevice, handler: {
+                    print ("save in device")
+                    self.toggleSaveMediaInDevice()
+                }))
             ]
             )
         )
@@ -186,6 +183,18 @@ class ProfileViewController: UIViewController {
         
         loadExtraFunctions()
         
+    }
+    
+    @objc  func toggleSaveMediaInDevice() {
+        if self.saveMediaInDevice {
+            saveMediaInDevice = false
+            UserDefaults.standard.set(false, forKey: "saveMediaInDevice")
+            UserDefaults.standard.synchronize()
+        } else {
+            saveMediaInDevice = true
+            UserDefaults.standard.set(true, forKey: "saveMediaInDevice")
+            UserDefaults.standard.synchronize()
+        }
     }
     
     private func loadExtraFunctions() {
@@ -294,6 +303,19 @@ class ProfileViewController: UIViewController {
             self.allowNotification = false
         } else {
             self.allowNotification = true
+        }
+        
+        let saveMediaInDeviceLocal = UserDefaults.standard.value(forKey: "saveMediaInDevice") as? Bool
+        if saveMediaInDeviceLocal == nil{
+            UserDefaults.standard.set(true, forKey: "saveMediaInDevice")
+            UserDefaults.standard.synchronize()
+            self.saveMediaInDevice = true
+        } else if saveMediaInDeviceLocal == false {
+            UserDefaults.standard.set(false, forKey: "saveMediaInDevice")
+            UserDefaults.standard.synchronize()
+            self.saveMediaInDevice = false
+        } else {
+            self.saveMediaInDevice = true
         }
         
         
@@ -501,6 +523,12 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
                 switchView.addTarget(self, action: #selector(self.changeToAllowNotifications), for: .valueChanged)
                 cell.accessoryView = switchView
             }
+            if indexPath.section == 2 && modelCell.titleSetting == "Save media in Gallery" {
+                let switchView = UISwitch(frame: .zero)
+                switchView.setOn(self.saveMediaInDevice, animated: true)
+                switchView.addTarget(self, action: #selector(self.toggleSaveMediaInDevice), for: .valueChanged)
+                cell.accessoryView = switchView
+            }
             return cell
         }
     }
@@ -594,7 +622,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         switch type.self {
         case .staticCell(let model) :
             model.handler()
-        case .switchCell(_) :
+        case .switchCell(let model) :
             print ("switch")
         }
     }

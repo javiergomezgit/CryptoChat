@@ -498,7 +498,7 @@ final class UserDatabaseController {
                                     return
                                 }
                                 
-                                let media = Media(url: imageURL, image: nil, placeholderImage: placeHolder, size: CGSize(width: screenWidth - 80, height: screenWidth - 80))
+                                let media = Media(url: imageURL, image: nil, placeholderImage: placeHolder, size: CGSize(width: 150, height: 150))
                                 
                                 kind = .photo(media)
                                 

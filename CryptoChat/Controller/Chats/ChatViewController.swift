@@ -33,7 +33,6 @@ class ChatViewController: MessagesViewController {
     private let friendPhotoURL: String?
     
     private var messages = [Message]()
-//    private var encryptedMessage = true
     private var decryptedMessages = [Message]()
     private var passwordEncryption = ""
     private var sender = PushNotificationSender()
@@ -45,6 +44,8 @@ class ChatViewController: MessagesViewController {
     private var unlockFaceID = true
     private var autolockTime = 0
     private var passcodeOn = true
+    
+    private var saveMediaInDevice = true
     
     public static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -78,9 +79,7 @@ class ChatViewController: MessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //        spinner.show(in: view)
-        
+                
         guard let currentUsername = UserDefaults.standard.value(forKey: "username") as? String else {
             return
         }
@@ -93,8 +92,14 @@ class ChatViewController: MessagesViewController {
         maintainPositionOnInputBarHeightChanged = false
         scrollsToLastItemOnKeyboardBeginsEditing = true
         messageInputBar.inputTextView.tintColor = .red
-        messageInputBar.sendButton.setTitleColor(.systemBlue, for: .normal)
-        messageInputBar.sendButton.title = "Send"
+        
+        // Configure the send button
+        messageInputBar.sendButton.setTitle(nil, for: .normal) // Explicitly remove the title
+        let arrowImage = UIImage(systemName: "arrow.up.right.circle.fill")?
+            .withConfiguration(UIImage.SymbolConfiguration(pointSize: 35))
+            .withRenderingMode(.alwaysTemplate)
+        messageInputBar.sendButton.setImage(arrowImage, for: .normal)
+        messageInputBar.sendButton.tintColor = .systemBlue // Tint the arrow
         messageInputBar.delegate = self
         messagesCollectionView.contentInset.top = 8
         
@@ -108,7 +113,7 @@ class ChatViewController: MessagesViewController {
         
         self.title = usernameFriend?.uppercased()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.createTopBar()
         }
         
@@ -122,6 +127,19 @@ class ChatViewController: MessagesViewController {
             //Means it's new launched
             UserDefaults.standard.set(false, forKey: "chatLaunched")
         }
+        
+        let saveMediaInDeviceLocal = UserDefaults.standard.value(forKey: "saveMediaInDevice") as? Bool
+        if saveMediaInDeviceLocal == nil{
+            UserDefaults.standard.set(true, forKey: "saveMediaInDevice")
+            UserDefaults.standard.synchronize()
+            self.saveMediaInDevice = true
+        } else if saveMediaInDeviceLocal == false {
+            UserDefaults.standard.set(false, forKey: "saveMediaInDevice")
+            UserDefaults.standard.synchronize()
+            self.saveMediaInDevice = false
+        } else {
+            self.saveMediaInDevice = true
+        }
     }
     
     private func setupInputBar() {
@@ -129,16 +147,15 @@ class ChatViewController: MessagesViewController {
         let largeConfig = UIImage.SymbolConfiguration(pointSize: 70, weight: .regular, scale: .large)
         
         let button = InputBarButtonItem()
-        button.setSize(CGSize(width: 25, height: 28), animated: false)
+        button.setSize(CGSize(width: 30, height: 28), animated: false)
         button.setImage(UIImage(systemName: "camera.fill", withConfiguration: largeConfig), for: .normal)
-        button.tintColor = UIColor(named: "mainOrange")
+        button.tintColor = UIColor(named: "greenAccent") // UIColor(named: "mainOrange")
         button.onTouchUpInside { [weak self] _ in
-            //self?.photoVideoInputActionSheet()
             if !self!.isNewConversation {
                 self!.showPicker()
             }
         }
-//        
+//
 //            let buttonMic = InputBarButtonItem()
 //            buttonMic.setSize(CGSize(width: 25, height: 25), animated: false)
 //            buttonMic.setImage(UIImage(systemName: "mic.fill", withConfiguration: largeConfig), for: .normal)
@@ -148,16 +165,11 @@ class ChatViewController: MessagesViewController {
 //                // self?.photoVideoInputActionSheet()
 //            }
 //            
-//            messageInputBar.setRightStackViewWidthConstant(to: 20, animated: false)
-//            messageInputBar.setStackViewItems([buttonMic], forStack: .right, animated: true)
-        
-        DispatchQueue.main.async {
-            //            self.spinner.dismiss()
-        }
+        messageInputBar.setLeftStackViewWidthConstant(to: 35, animated: true)
+        messageInputBar.setStackViewItems([button], forStack: .left, animated: true)
     }
     
     @objc func clickOnButton() {
-        
         if !friendPhotoURL!.isEmpty {
             if let vc = UIStoryboard(name: "Friends", bundle: nil).instantiateViewController(identifier: "FriendProfileViewController") as? FriendProfileViewController {
                 let friend = Friend(idFriend: friendID!, blocked: false, chatID: chatID!, friendsSince: "", isContact: isContact!, phoneNumberFriend: "", photoURLFriend: friendPhotoURL!, usernameFriend: usernameFriend!)
@@ -265,76 +277,6 @@ class ChatViewController: MessagesViewController {
         
     }
     
-    //    @objc private func didTapUnlock() {
-    //
-    //        if self.encryptedMessage {
-    //            if unlockFaceID {
-    //                FaceDetectionViewController.shared.authenticationBiometricID { [self] success, error in
-    //                    if success == true {
-    //                        let rightBUttonImage = UIImage(systemName: "lock.open")!.withRenderingMode(.alwaysTemplate)
-    //                        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: rightBUttonImage, style: .plain, target: self, action: #selector(didTapUnlock))
-    //                        navigationItem.rightBarButtonItem!.tintColor = .blue
-    //
-    //                        self.encryptedMessage = false
-    //                        if let conversationId = chatID {
-    //                            listenForMessages(chatID: conversationId, shouldScrollToBottom: true)
-    //                        }
-    //                    } else {
-    //                        print (error?.localizedDescription as Any)
-    //                        let alert = UIAlertController(title: "Error", message: "Not matching face, possible security bridge", preferredStyle: UIAlertController.Style.alert)
-    //                        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { action in
-    //                            self.navigationController?.popToRootViewController(animated: true)
-    //                        }))
-    //                        alert.addAction(UIAlertAction(title: "Settings", style: .default, handler: { _ in
-    //                            if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
-    //                                UIApplication.shared.open(settingsUrl)
-    //                            }
-    //                        }))
-    //                        self.present(alert, animated: true, completion: nil)
-    //                    }
-    //                }
-    //            } else {
-    //                let storyboard = UIStoryboard(name: "Profile", bundle: nil)
-    //                let vc = storyboard.instantiateViewController(identifier: "PasscodeViewController") as! PasscodeViewController
-    //                vc.statusOfPasscode = .verifyPasscode
-    //                vc.completion = { [self] success in
-    //                    if success == true {
-    //                        let rightBUttonImage = UIImage(systemName: "lock.open")!.withRenderingMode(.alwaysTemplate)
-    //                        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: rightBUttonImage, style: .plain, target: self, action: #selector(didTapUnlock))
-    //                        navigationItem.rightBarButtonItem!.tintColor = .blue
-    //
-    //                        self.encryptedMessage = false
-    //                        if let conversationId = chatID {
-    //                            listenForMessages(chatID: conversationId, shouldScrollToBottom: true)
-    //                        }
-    //                    } else {
-    //                        let alert = UIAlertController(title: "Error", message: "Not matching face, possible security bridge", preferredStyle: UIAlertController.Style.alert)
-    //                        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { action in
-    //                            self.navigationController?.popToRootViewController(animated: true)
-    //                        }))
-    //                        alert.addAction(UIAlertAction(title: "Settings", style: .default, handler: { _ in
-    //                            if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
-    //                                UIApplication.shared.open(settingsUrl)
-    //                            }
-    //                        }))
-    //                        self.present(alert, animated: true, completion: nil)
-    //                    }
-    //                }
-    //                vc.modalPresentationStyle = .fullScreen
-    //                self.present(vc, animated: true, completion: nil)
-    //            }
-    //        } else {
-    //            let rightBUttonImage = UIImage(systemName: "lock.fill")!.withRenderingMode(.alwaysTemplate)
-    //            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: rightBUttonImage, style: .plain, target: self, action: #selector(self.didTapUnlock))
-    //            self.navigationItem.rightBarButtonItem!.tintColor = UIColor.label
-    //
-    //            self.encryptedMessage = true
-    //            if let conversationId = self.chatID {
-    //                self.listenForMessages(chatID: conversationId, shouldScrollToBottom: true)
-    //            }
-    //        }
-    //    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.navigationBar.barTintColor = UIColor(named: "mainOrange")
     }
@@ -383,15 +325,19 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
         
         /* Ex: cappedTo:1024 will make sure images from the library or the camera will be
          resized to fit in a 1024x1024 box. Defaults to original image size. */
-        config.targetImageSize = .cappedTo(size: 1200)
+        config.targetImageSize = .cappedTo(size: 1400)
         
         config.library.mediaType = .photoAndVideo
         config.usesFrontCamera = true
-        config.shouldSaveNewPicturesToAlbum = false
+        if saveMediaInDevice {
+            config.shouldSaveNewPicturesToAlbum = true
+        } else {
+            config.shouldSaveNewPicturesToAlbum = false
+        }
         config.startOnScreen = .photo
         config.screens = [.video, .photo, .library]
         /* Adds a Crop step in the photo taking process, after filters. Defaults to .none */
-        config.showsCrop = .none//  .rectangle(ratio: (1/1))
+        config.showsCrop = .none //.rectangle(ratio: (1/1))
         config.wordings.libraryTitle = "Gallery"
         config.wordings.cameraTitle = "Photo Camera"
         config.wordings.videoTitle = "Video Camera"
@@ -412,15 +358,14 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
             
             if cancelled {
                 picker.dismiss(animated: true, completion: nil)
-                _ = self.navigationController?.popViewController(animated: true)
                 return
             }
             
             if let photo = items.singlePhoto {
-                //                self.spinner.show(in: self.view)
-                //                self.updateImageProfile(image: photo.image)
-                
-                guard let image = photo.modifiedImage, let imageData = image.pngData() else {
+                let image = photo.image
+                guard let imageData = image.pngData() else {
+                    print ("error converting image to data")
+                    print (image)
                     return
                 }
                 
@@ -438,8 +383,6 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
                     case .success(let urlString):
                         
                         let messageId = self.createMessageId()
-                        //let dat = Date()
-                        //let date = Self.dateFormatter.string(from: dat)
                         
                         guard let url = URL(string: urlString) else {
                             return
@@ -458,10 +401,6 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
                             //image
                             if success {
                                 print ("sent image")
-                                DispatchQueue.main.async {
-                                    //                                    self.spinner.dismiss()
-                                }
-                                
                             } else {
                                 print ("something went wrong")
                             }
@@ -588,12 +527,6 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
           
         let date = Date()
         let dateString = Self.dateFormatter.string(from: date)
-//        
-//        var passCode = ""
-//        for _ in 0...7{
-//            let number = Int.random(in: 0..<9)
-//            passCode = "\(passCode)\(String(number))"
-//        }
 
         let encryptedText = Encryption.shared.encryptDecrypt(oldMessage: text, encryptedPassword: self.passwordEncryption, messageID: dateString, encrypt: true)
         
@@ -692,7 +625,6 @@ extension ChatViewController: MessagesDataSource, MessagesLayoutDelegate, Messag
     
     func didTapImage(in cell: MessageCollectionViewCell) {
         
-        
         guard let indexPath = messagesCollectionView.indexPath(for: cell) else {
             return
         }
@@ -755,20 +687,6 @@ extension ChatViewController: MessagesDataSource, MessagesLayoutDelegate, Messag
     
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
         avatarView.isHidden = true
-        
-        //Show image of friend photo for each avatar user
-        //        if message.sender.senderId == userID {
-        //            let url = URL(string: self.friendPhotoURL!)
-        //            SDWebImageManager.shared.loadImage(with: url, options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
-        //                avatarView.image = image
-        //            }
-        //        } else {
-        //            let url = URL(string: self.senderPhotoURL!)
-        //            SDWebImageManager.shared.loadImage(with: url, options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
-        //                avatarView.image = image
-        //            }
-        //        }
-        //        avatarView.backgroundColor = .white
     }
     
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
