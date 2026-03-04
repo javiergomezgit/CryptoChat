@@ -66,9 +66,13 @@ class BlockedViewController: UIViewController {
                 self.filteredFriends = self.friends
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    self.refreshControl.endRefreshing()
                 }
             } else {
-                self.emptyViewBlocked.isHidden = false
+                DispatchQueue.main.async {
+                    self.emptyViewBlocked.isHidden = false
+                    self.refreshControl.endRefreshing()
+                }
             }
         }
     }

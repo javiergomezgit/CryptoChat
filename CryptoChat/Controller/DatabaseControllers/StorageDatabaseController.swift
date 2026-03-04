@@ -45,7 +45,11 @@ final class StorageDatabaseController {
         let reference = storage.child(path)
     
         reference.downloadURL { url, error in
-            print (url as Any)
+            if let error = error {
+                print("downloadURL error:", error)
+            } else {
+                print("downloadURL url:", url as Any)
+            }
             guard let url = url, error == nil else {
                 completion(.failure(StorageErrors.failedToGetURL))
                 return
